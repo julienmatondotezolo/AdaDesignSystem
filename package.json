@@ -2,16 +2,25 @@
   "name": "ada-design-system",
   "version": "3.1.0",
   "description": "Professional typography without gradients - Clean shadcn/ui design system with French/Dutch/English support",
-  "main": "index.ts",
-  "types": "index.ts",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.js"
+    },
+    "./styles.css": "./dist/ada-design-system.css"
+  },
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "npm run build-package && next build",
+    "build-package": "tsc --project tsconfig.package.json && npm run build-css",
+    "build-css": "tailwindcss -i ./app/globals.css -o ./dist/ada-design-system.css --minify",
     "start": "next start",
     "lint": "next lint",
-    "build-css": "tailwindcss -i ./globals.css -o ./dist/ada-design-system.css --watch",
-    "build-dist": "tsc && tailwindcss -i ./globals.css -o ./dist/ada-design-system.css",
-    "showcase": "python -m http.server 8080 --directory showcase"
+    "showcase": "python -m http.server 8080 --directory showcase",
+    "prepublishOnly": "npm run build-package"
   },
   "keywords": [
     "design-system",
@@ -38,13 +47,14 @@
     "url": "https://github.com/julienmatondotezolo/AdaDesignSystem/issues"
   },
   "files": [
+    "dist/",
     "components/",
     "lib/",
-    "globals.css",
+    "app/globals.css",
     "tailwind.config.js",
     "index.ts",
-    "dist/",
-    "README.md"
+    "README.md",
+    "LICENSE"
   ],
   "engines": {
     "node": ">=18.0.0"

@@ -156,7 +156,72 @@ export default function Component() {
 
 ---
 
-## 🚀 Installation in Next.js Apps
+## 🚀 Installation
+
+### Method 1: NPM Package (Recommended)
+
+```bash
+# Install the AdaDesignSystem package
+npm install ada-design-system
+
+# Or using yarn
+yarn add ada-design-system
+
+# Or using pnpm
+pnpm add ada-design-system
+```
+
+**Note**: This package is published on npm as `ada-design-system` and includes all components, utilities, and translations.
+
+#### NPM Package Setup
+
+After installing the package, add the required CSS imports to your app:
+
+```tsx
+// In your main layout.tsx or _app.tsx
+import "ada-design-system/dist/styles.css"
+import "./globals.css" // Your custom styles
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode
+}) {
+  return (
+    <html lang="en">
+      <body>{children}</body>
+    </html>
+  )
+}
+```
+
+#### Tailwind Configuration for NPM Package
+
+Update your `tailwind.config.js` to include the design system:
+
+```javascript
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: [
+    './pages/**/*.{ts,tsx}',
+    './components/**/*.{ts,tsx}',
+    './app/**/*.{ts,tsx}',
+    './src/**/*.{ts,tsx}',
+    './node_modules/ada-design-system/dist/**/*.{js,ts,jsx,tsx}', // Include package
+  ],
+  theme: {
+    extend: {
+      // The package includes all required color tokens and typography
+      // No additional configuration needed
+    },
+  },
+  plugins: [require("tailwindcss-animate")],
+}
+```
+
+### Method 2: Manual Installation in Next.js Apps
+
+If you prefer to copy components directly:
 
 ### 1. Install Dependencies
 
@@ -236,7 +301,117 @@ cp -r AdaDesignSystem/components/ui/language-switcher.tsx your-app/components/ui
 cp -r AdaDesignSystem/lib/i18n.ts your-app/lib/
 ```
 
-### 5. Use with Language Support
+## 📦 Using NPM Package
+
+### Quick Start
+
+```tsx
+import { 
+  Button, 
+  AdaLogo, 
+  Card, 
+  CardHeader, 
+  CardTitle, 
+  CardContent,
+  LanguageSwitcher, 
+  useLocale,
+  t 
+} from "ada-design-system"
+
+export default function MyApp() {
+  const { locale, setLocale } = useLocale()
+  const translate = t(locale)
+  
+  return (
+    <Card className="p-6">
+      <CardHeader>
+        <div className="flex items-center gap-4">
+          <AdaLogo size="lg" variant="primary" />
+          <CardTitle>AdaMenu Dashboard</CardTitle>
+        </div>
+      </CardHeader>
+      <CardContent>
+        <div className="flex items-center gap-4">
+          <Button variant="default">
+            {translate('common.save')}
+          </Button>
+          <LanguageSwitcher 
+            currentLocale={locale}
+            onLocaleChange={setLocale}
+            variant="minimal"
+          />
+        </div>
+      </CardContent>
+    </Card>
+  )
+}
+```
+
+### Available Components
+
+```tsx
+// Core UI Components
+import { 
+  Button,
+  Card, 
+  CardHeader, 
+  CardTitle, 
+  CardDescription, 
+  CardContent,
+  CardFooter,
+  Input,
+  Label,
+  Badge,
+  Switch,
+  Select,
+  Table,
+  AdaLogo 
+} from "ada-design-system"
+
+// Loading & Progress Components
+import {
+  Spinner,
+  Progress,
+  LoadingProgress,
+  CircularProgress,
+  StepProgress,
+  PulseLoader,
+  LoadingOverlay,
+  LoadingButton
+} from "ada-design-system"
+
+// Skeleton Components
+import {
+  Skeleton,
+  SkeletonAvatar,
+  SkeletonButton,
+  SkeletonText,
+  SkeletonCard,
+  SkeletonTable,
+  SkeletonList
+} from "ada-design-system"
+
+// Dialogs & Notifications
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogDescription,
+  Toast,
+  Avatar
+} from "ada-design-system"
+
+// Language & Internationalization
+import {
+  LanguageSwitcher,
+  FontViewer,
+  useLocale,
+  t
+} from "ada-design-system"
+```
+
+### 5. Manual Installation Usage
 
 ```tsx
 import { Button } from "@/components/ui/button"
@@ -326,6 +501,134 @@ export default function TypographyShowcase() {
 ---
 
 ## 🎯 Perfect for ADA Apps
+
+### NPM Package Publishing
+
+To publish this design system as an npm package, the `package.json` includes:
+
+```json
+{
+  "name": "ada-design-system",
+  "version": "3.1.0",
+  "description": "Professional design system for ADA restaurant management platform",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "keywords": [
+    "design-system",
+    "react",
+    "tailwindcss",
+    "shadcn-ui",
+    "restaurant",
+    "multilingual",
+    "ada-systems"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/julienmatondotezolo/AdaDesignSystem.git"
+  }
+}
+```
+
+#### Publishing Commands
+
+```bash
+# Build the package for distribution
+npm run build-package
+
+# Login to npm (first time only)
+npm login
+
+# Publish to npm
+npm publish
+
+# Or publish with specific tag
+npm publish --tag beta
+
+# Check package info
+npm info ada-design-system
+```
+
+#### Installation for End Users
+
+```bash
+# Install from npm
+npm install ada-design-system
+
+# Or with specific version
+npm install ada-design-system@3.1.0
+
+# Install with all peer dependencies
+npm install ada-design-system react react-dom
+```
+
+### Easy Integration Across ADA Platform
+
+```tsx
+// AdaMenu - Menu Management
+import { Card, Button, Table, Badge } from "ada-design-system"
+
+// AdaStock - Inventory Tracking  
+import { Progress, LoadingButton, SkeletonTable } from "ada-design-system"
+
+// AdaStaff - Employee Scheduling
+import { Dialog, Select, LanguageSwitcher } from "ada-design-system"
+
+// AdaAuth - Authentication
+import { AdaLogo, Input, Label, Spinner } from "ada-design-system"
+```
+
+### Real-World Usage Examples
+
+```tsx
+// AdaMenu Integration
+import { Card, CardHeader, CardTitle, Button, Badge, t, useLocale } from "ada-design-system"
+
+export default function MenuItemCard({ item }) {
+  const { locale } = useLocale()
+  const translate = t(locale)
+  
+  return (
+    <Card className="p-4">
+      <CardHeader>
+        <div className="flex justify-between items-center">
+          <CardTitle>{item.name}</CardTitle>
+          <Badge variant={item.available ? "success" : "secondary"}>
+            {item.available ? translate('menu.available') : translate('menu.unavailable')}
+          </Badge>
+        </div>
+      </CardHeader>
+      <div className="flex gap-2 mt-4">
+        <Button variant="outline">{translate('menu.edit')}</Button>
+        <Button variant="destructive">{translate('common.delete')}</Button>
+      </div>
+    </Card>
+  )
+}
+
+// AdaStaff Integration  
+import { Dialog, Select, LanguageSwitcher, LoadingButton } from "ada-design-system"
+
+export default function ShiftScheduler() {
+  const { locale, setLocale } = useLocale()
+  
+  return (
+    <Dialog>
+      <div className="space-y-4">
+        <LanguageSwitcher currentLocale={locale} onLocaleChange={setLocale} />
+        <Select placeholder={t(locale)('staff.selectEmployee')} />
+        <LoadingButton loading={saving}>
+          {t(locale)('common.save')}
+        </LoadingButton>
+      </div>
+    </Dialog>
+  )
+}
+```
 
 ### Multilingual Restaurant Software
 - **AdaMenu** - Menu management (FR: Gestion des menus, NL: Menumanagement)
