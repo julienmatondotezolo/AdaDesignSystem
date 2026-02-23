@@ -1,44 +1,46 @@
-# 🎨 Ada Design System
+# 🎨 Ada Design System v2.0
 
-**Culinary Minimalism** - shadcn/ui based design system for AdaSystems platform with premium hospitality software aesthetics.
+**Modern Hospitality UI** - Vibrant, contemporary shadcn/ui design system with premium aesthetics for AdaSystems platform.
 
 ![Ada Design System](https://img.shields.io/badge/Design%20System-v2.0.0-blue)
 ![shadcn/ui](https://img.shields.io/badge/Built%20with-shadcn%2Fui-black)
-![Status](https://img.shields.io/badge/Status-Active-green)
+![Modern](https://img.shields.io/badge/Style-Modern-brightgreen)
+![Status](https://img.shields.io/badge/Status-Production-green)
 
 ## 🎯 Brand Philosophy
 
-**"shadcn/ui meets Culinary Minimalism"**
+**"Modern, Vibrant, Professional"**
 
-Built on the solid foundation of shadcn/ui components with ADA's premium design tokens. Perfect for reusing across all Next.js ADA applications with consistent branding and behavior.
-
----
-
-## ✨ Why shadcn/ui Base?
-
-- ✅ **Consistent Architecture** - Same patterns across all ADA apps
-- ✅ **Easy Integration** - Drop into any Next.js project
-- ✅ **Accessibility First** - Built-in ARIA support via Radix UI
-- ✅ **TypeScript Native** - Full type safety out of the box
-- ✅ **Tailwind Integration** - Design tokens as CSS variables
-- ✅ **Customizable** - Variant-based component system
+A complete transformation from minimalism to modern vibrancy. Built on shadcn/ui with contemporary colors, premium typography, and sophisticated interactions. Perfect for next-generation hospitality software.
 
 ---
 
-## 🎨 ADA Design Tokens
+## ✨ What's New in v2.0?
 
-### Colors (HSL Format for Tailwind)
-- **Primary**: `hsl(232, 100%, 66%)` - ADA Blue (#4d6aff)
-- **Secondary**: `hsl(201, 85%, 60%)` - ADA Light Blue (#45b9ee)
-- **Background**: `hsl(0, 0%, 100%)` - Pure White
-- **Foreground**: `hsl(222, 84%, 5%)` - Charcoal Text
-- **Muted**: `hsl(210, 40%, 96%)` - Light Gray
-- **Border**: `hsl(214, 32%, 91%)` - Subtle Border
+- 🎨 **Modern Color Palette** - Vibrant blues, purples, cyans, and pinks
+- 🔤 **Premium Typography** - Inter & Plus Jakarta Sans for contemporary feel
+- 🚀 **Enhanced Components** - Buttons with hover animations and shadows
+- 📱 **New Components** - Toast, Dialog, Progress, Avatar
+- 🌈 **More Variants** - Extended color and size options
+- ⚡ **Improved UX** - Smooth transitions and micro-interactions
 
-### Typography
-- **Primary**: Space Grotesk (Modern geometric, brand headers)
-- **Secondary**: Geist Sans (Technical precision, UI text)
-- **Mono**: JetBrains Mono (Code, technical data)
+---
+
+## 🎨 Modern Design Tokens
+
+### Vibrant Color System (HSL for Tailwind)
+- **Primary**: `hsl(221, 83%, 53%)` - Modern Blue
+- **Secondary**: `hsl(262, 83%, 58%)` - Modern Purple  
+- **Accent**: `hsl(199, 89%, 48%)` - Vibrant Cyan
+- **Success**: `hsl(142, 76%, 36%)` - Modern Green
+- **Warning**: `hsl(32, 95%, 44%)` - Modern Orange
+- **Destructive**: `hsl(346, 87%, 43%)` - Modern Red
+- **Pink**: `hsl(322, 100%, 65%)` - Vibrant Pink
+
+### Premium Typography
+- **Primary**: Inter (Clean, modern, highly readable)
+- **Display**: Plus Jakarta Sans (Premium headings and accents)
+- **Features**: OpenType features enabled for optimal rendering
 - **Mono**: JetBrains Mono (Code/data)
 
 ### Spacing Scale
@@ -61,24 +63,38 @@ Built on the solid foundation of shadcn/ui components with ADA's premium design 
 
 ## 🧩 Components Available
 
-### Core shadcn/ui Components (ADA Styled)
-- ✅ **AdaLogo** - Brand logo with size/color variants
-- ✅ **Button** - Primary, Secondary, Destructive, Outline, Ghost, Link
-- ✅ **Card** - Header, Content, Footer with consistent spacing
-- ✅ **Input** - Text inputs with focus states
-- ✅ **Label** - Accessible form labels
-- ✅ **Badge** - Status indicators with semantic colors
-- ✅ **Switch** - Toggle controls
-- ✅ **Select** - Dropdown selects with search
-- ✅ **Table** - Data tables with header/body/footer
+### Core Components (Modern Design)
+- ✅ **AdaLogo** - Brand logo with multiple size/color variants
+- ✅ **Button** - 8 variants, 7 sizes, with hover animations & shadows
+- ✅ **Card** - Glass-morphism inspired cards with backdrop blur
+- ✅ **Input** - Modern inputs with enhanced focus states
+- ✅ **Label** - Accessible form labels with premium typography
+- ✅ **Badge** - 12 colorful variants for status indicators
+- ✅ **Switch** - Smooth toggle controls with transitions
+- ✅ **Select** - Modern dropdowns with enhanced styling
+- ✅ **Table** - Clean data tables with modern spacing
+
+### Feedback & Overlays
+- ✅ **Toast** - Modern notification system with variants
+- ✅ **Dialog** - Modal dialogs with backdrop blur and animations
+- ✅ **Progress** - Multi-variant progress bars for loading states
+
+### User Interface
+- ✅ **Avatar** - 5 sizes for user profiles and team displays
+
+### Enhanced Features
+- 🎨 **Vibrant Color Palette** - 7 semantic color variants
+- 🔄 **Smooth Animations** - Micro-interactions and transitions
+- 📱 **Glass Morphism** - Modern backdrop blur effects
+- 🎯 **Active States** - Button scale animations on click
+- 🌈 **Gradient Support** - Beautiful gradient text and backgrounds
 
 ### Coming Soon
-- 🔄 **Dialog** - Modals and overlays
-- 🔄 **Form** - Complete form layouts with validation
-- 🔄 **Dropdown Menu** - Context menus
-- 🔄 **Toast** - Notification system
-- 🔄 **Tabs** - Navigation tabs
-- 🔄 **Accordion** - Collapsible content
+- 🔄 **Dropdown Menu** - Context menus with modern styling
+- 🔄 **Tabs** - Navigation tabs with indicator animations
+- 🔄 **Accordion** - Collapsible content with smooth transitions
+- 🔄 **Command** - Command palette with search
+- 🔄 **Calendar** - Date picker with modern design
 
 ---
 

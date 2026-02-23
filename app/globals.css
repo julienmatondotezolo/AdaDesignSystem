@@ -1,6 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Geist+Sans:wght@300;400;500;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -8,43 +7,55 @@
 
 @layer base {
   :root {
-    /* ADA Design System - Light Mode */
+    /* Modern ADA Design System - Light Mode */
     --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --foreground: 224 71% 4%;
     
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 224 71% 4%;
     
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 224 71% 4%;
     
-    /* Primary - ADA Blue (#4d6aff) */
-    --primary: 232 100% 66%;
+    /* Primary - Modern Blue */
+    --primary: 221 83% 53%;
     --primary-foreground: 210 40% 98%;
     
-    /* Secondary - ADA Light Blue (#45b9ee) */
-    --secondary: 201 85% 60%;
-    --secondary-foreground: 222.2 84% 4.9%;
+    /* Secondary - Modern Purple */
+    --secondary: 262 83% 58%;
+    --secondary-foreground: 210 40% 98%;
     
     /* Muted */
-    --muted: 210 40% 96%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 220 14.3% 95.9%;
+    --muted-foreground: 220 8.9% 46.1%;
     
-    /* Accent */
-    --accent: 210 40% 96%;
-    --accent-foreground: 222.2 84% 4.9%;
+    /* Accent - Vibrant Cyan */
+    --accent: 199 89% 48%;
+    --accent-foreground: 210 40% 98%;
     
-    /* Destructive - ADA Error Red */
-    --destructive: 0 84% 60%;
+    /* Success - Modern Green */
+    --success: 142 76% 36%;
+    --success-foreground: 210 40% 98%;
+    
+    /* Warning - Modern Orange */
+    --warning: 32 95% 44%;
+    --warning-foreground: 210 40% 98%;
+    
+    /* Destructive - Modern Red */
+    --destructive: 346 87% 43%;
     --destructive-foreground: 210 40% 98%;
     
-    /* Border */
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 232 100% 66%;
+    /* Pink accent */
+    --pink: 322 100% 65%;
+    --pink-foreground: 210 40% 98%;
     
-    /* Radius */
-    --radius: 0.75rem;
+    /* Border & Input */
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 221 83% 53%;
+    
+    /* Radius - More modern, subtle */
+    --radius: 0.5rem;
   }
 
   .dark {
@@ -83,7 +94,27 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground;
-    font-family: 'Space Grotesk', 'Geist Sans', system-ui, sans-serif;
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', 'Plus Jakarta Sans', system-ui, sans-serif;
+    font-feature-settings: 'rlig' 1, 'calt' 1;
+  }
+  
+  /* Modern scrollbars */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--muted));
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--muted-foreground) / 0.3);
+    border-radius: 3px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--muted-foreground) / 0.5);
   }
 }
