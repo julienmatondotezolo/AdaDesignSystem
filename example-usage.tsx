@@ -1,10 +1,10 @@
-// Example: How to use ADA Design System as an installed package
-// After: npm install @ada-systems/design-system
+// Example: How to use ADA Design System components locally
+// This demonstrates the components from the local repository
 
 'use client'
 
 import React, { useState } from 'react'
-// Import all components directly from the package
+// Import all components from local components/ui
 import { 
   Button, 
   Card, 
@@ -37,10 +37,7 @@ import {
   useLocale,
   Progress,
   Spinner
-} from '@ada-systems/design-system'
-
-// Import the CSS styles
-import '@ada-systems/design-system/styles'
+} from './components/ui'
 
 // Import icons
 import { Plus, Edit, Trash2, Save } from 'lucide-react'
