@@ -1,33 +1,44 @@
 # 🎨 Ada Design System
 
-**Culinary Minimalism** - A modern design system for AdaSystems platform combining premium software interface aesthetics with hospitality industry needs.
+**Culinary Minimalism** - shadcn/ui based design system for AdaSystems platform with premium hospitality software aesthetics.
 
-![Ada Design System](https://img.shields.io/badge/Design%20System-v1.0.0-blue)
+![Ada Design System](https://img.shields.io/badge/Design%20System-v2.0.0-blue)
+![shadcn/ui](https://img.shields.io/badge/Built%20with-shadcn%2Fui-black)
 ![Status](https://img.shields.io/badge/Status-Active-green)
 
 ## 🎯 Brand Philosophy
 
-**"From Industrial Modernism to Culinary Minimalism"**
+**"shadcn/ui meets Culinary Minimalism"**
 
-Our design system creates premium software interfaces that feel structured, efficient, and sophisticated. High-contrast blocks with blue tones convey trust and seamless technology for the hospitality industry.
+Built on the solid foundation of shadcn/ui components with ADA's premium design tokens. Perfect for reusing across all Next.js ADA applications with consistent branding and behavior.
 
 ---
 
-## 🎨 Design Tokens
+## ✨ Why shadcn/ui Base?
 
-### Colors
-- **Primary Blue**: `#4d6aff` - Electric/Professional Blue
-- **Secondary Light Blue**: `#45b9ee` - Tech/Atmospheric Blue
-- **Background**: `#FFFFFF` - Pure White
-- **Success**: `#10b981` - Emerald Green
-- **Warning**: `#f59e0b` - Amber
-- **Error**: `#ef4444` - Red
-- **Text Primary**: `#1f2937` - Charcoal
-- **Text Secondary**: `#6b7280` - Gray
+- ✅ **Consistent Architecture** - Same patterns across all ADA apps
+- ✅ **Easy Integration** - Drop into any Next.js project
+- ✅ **Accessibility First** - Built-in ARIA support via Radix UI
+- ✅ **TypeScript Native** - Full type safety out of the box
+- ✅ **Tailwind Integration** - Design tokens as CSS variables
+- ✅ **Customizable** - Variant-based component system
+
+---
+
+## 🎨 ADA Design Tokens
+
+### Colors (HSL Format for Tailwind)
+- **Primary**: `hsl(232, 100%, 66%)` - ADA Blue (#4d6aff)
+- **Secondary**: `hsl(201, 85%, 60%)` - ADA Light Blue (#45b9ee)
+- **Background**: `hsl(0, 0%, 100%)` - Pure White
+- **Foreground**: `hsl(222, 84%, 5%)` - Charcoal Text
+- **Muted**: `hsl(210, 40%, 96%)` - Light Gray
+- **Border**: `hsl(214, 32%, 91%)` - Subtle Border
 
 ### Typography
-- **Primary**: Space Grotesk (Modern geometric)
-- **Secondary**: Geist Sans (Technical precision)
+- **Primary**: Space Grotesk (Modern geometric, brand headers)
+- **Secondary**: Geist Sans (Technical precision, UI text)
+- **Mono**: JetBrains Mono (Code, technical data)
 - **Mono**: JetBrains Mono (Code/data)
 
 ### Spacing Scale
@@ -48,73 +59,150 @@ Our design system creates premium software interfaces that feel structured, effi
 
 ---
 
-## 🧩 Components
+## 🧩 Components Available
 
-### Core Components
-- ✅ **Logo** - Brand logo with multiple variants (React + CSS)
-- ✅ **Buttons** - Primary, Secondary, Ghost, Icon
-- ✅ **Cards** - Product, Info, Stats, Interactive
-- ✅ **Inputs** - Text, Email, Password, Search, Select
-- ✅ **Tables** - Data tables with sorting & filtering
-- ✅ **Switches** - Toggle controls
-- ✅ **Modals** - Dialogs and overlays
-- ✅ **Navigation** - Tabs, breadcrumbs, sidebar
-- ✅ **Forms** - Complete form layouts
-- ✅ **Badges** - Status indicators
-- ✅ **Loading** - Progress indicators
+### Core shadcn/ui Components (ADA Styled)
+- ✅ **AdaLogo** - Brand logo with size/color variants
+- ✅ **Button** - Primary, Secondary, Destructive, Outline, Ghost, Link
+- ✅ **Card** - Header, Content, Footer with consistent spacing
+- ✅ **Input** - Text inputs with focus states
+- ✅ **Label** - Accessible form labels
+- ✅ **Badge** - Status indicators with semantic colors
+- ✅ **Switch** - Toggle controls
+- ✅ **Select** - Dropdown selects with search
+- ✅ **Table** - Data tables with header/body/footer
 
-### Layout Components  
-- ✅ **Grid System** - Responsive layout
-- ✅ **Containers** - Content wrappers
-- ✅ **Spacing** - Margin/padding utilities
+### Coming Soon
+- 🔄 **Dialog** - Modals and overlays
+- 🔄 **Form** - Complete form layouts with validation
+- 🔄 **Dropdown Menu** - Context menus
+- 🔄 **Toast** - Notification system
+- 🔄 **Tabs** - Navigation tabs
+- 🔄 **Accordion** - Collapsible content
 
 ---
 
-## 🚀 Getting Started
+## 🚀 Installation in Next.js Apps
 
-### Installation
+### 1. Install Dependencies
+
 ```bash
-# Clone the repository
-git clone https://github.com/julienmatondotezolo/AdaDesignSystem.git
-
-# Open the showcase
-open showcase/index.html
+npm install @radix-ui/react-label @radix-ui/react-select @radix-ui/react-slot @radix-ui/react-switch class-variance-authority clsx lucide-react tailwind-merge
 ```
 
-### Usage
-```html
-<!-- Include the design system CSS -->
-<link rel="stylesheet" href="ada-design-system.css">
+### 2. Configure Tailwind CSS
 
-<!-- Use components -->
-<button class="ada-btn ada-btn--primary">Primary Button</button>
-<div class="ada-card">Content here</div>
+Add to your `tailwind.config.js`:
 
-<!-- ADA Logo -->
-<svg class="ada-logo ada-logo--medium ada-logo--primary" viewBox="0 0 689.5 300.5">
-  <path d="M2.228,298.969 L80.111,298.969 L153.894,114.729..." />
-</svg>
+```javascript
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  darkMode: ["class"],
+  content: [
+    './pages/**/*.{ts,tsx}',
+    './components/**/*.{ts,tsx}',
+    './app/**/*.{ts,tsx}',
+    './src/**/*.{ts,tsx}',
+    './node_modules/ada-design-system/**/*.{ts,tsx}', // If installed as package
+  ],
+  theme: {
+    extend: {
+      colors: {
+        border: "hsl(var(--border))",
+        input: "hsl(var(--input))",
+        ring: "hsl(var(--ring))",
+        background: "hsl(var(--background))",
+        foreground: "hsl(var(--foreground))",
+        primary: {
+          DEFAULT: "hsl(var(--primary))", // ADA Blue
+          foreground: "hsl(var(--primary-foreground))",
+        },
+        secondary: {
+          DEFAULT: "hsl(var(--secondary))", // ADA Light Blue
+          foreground: "hsl(var(--secondary-foreground))",
+        },
+        // ... rest of color system
+      },
+      fontFamily: {
+        sans: ["Space Grotesk", "Geist Sans", "system-ui"],
+      },
+    },
+  },
+  plugins: [require("tailwindcss-animate")],
+}
 ```
 
-### React Usage
-```jsx
-import { AdaLogo } from './components/logo/AdaLogo';
+### 3. Add CSS Variables
 
-// Default logo
-<AdaLogo />
+Add to your `globals.css`:
 
-// Custom variants
-<AdaLogo size="large" variant="secondary" />
-<AdaLogo size="custom" width="400px" height="175px" variant="white" />
+```css
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --primary: 232 100% 66%; /* ADA Blue */
+    --secondary: 201 85% 60%; /* ADA Light Blue */
+    /* ... rest of design tokens */
+  }
+}
+```
+
+### 4. Copy Components
+
+Copy the components you need from this design system:
+
+```bash
+# Example: Copy button component
+cp -r AdaDesignSystem/components/ui/button.tsx your-app/components/ui/
+cp -r AdaDesignSystem/lib/utils.ts your-app/lib/
+```
+
+### 5. Use in Your App
+
+```tsx
+import { Button } from "@/components/ui/button"
+import { AdaLogo } from "@/components/ui/ada-logo"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+
+export default function HomePage() {
+  return (
+    <div className="p-8">
+      <AdaLogo size="lg" variant="primary" />
+      
+      <Card className="mt-8">
+        <CardHeader>
+          <CardTitle>Welcome to ADA Systems</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <p>Premium hospitality software with beautiful design.</p>
+          <Button className="mt-4">Get Started</Button>
+        </CardContent>
+      </Card>
+    </div>
+  )
+}
 ```
 
 ---
 
-## 📱 Responsive Design
+## 🎯 Perfect for ADA Apps
 
-Built mobile-first with breakpoints:
-- **Mobile**: 320px+
-- **Tablet**: 768px+
+This design system is specifically architected for:
+
+- **AdaMenu** - Restaurant menu management
+- **AdaStock** - Inventory tracking  
+- **AdaStaff** - Employee scheduling
+- **AdaAuth** - Authentication services
+- **AdaKDS** - Kitchen display systems
+- **AdaPhone** - AI receptionist interfaces
+
+All apps share the same component library for consistency!
 - **Desktop**: 1024px+
 - **Large**: 1280px+
 

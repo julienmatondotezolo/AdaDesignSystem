@@ -1,18 +1,24 @@
 {
   "name": "ada-design-system",
-  "version": "1.0.0",
-  "description": "Culinary Minimalism - A modern design system for AdaSystems platform",
-  "main": "ada-design-system.css",
+  "version": "2.0.0",
+  "description": "Culinary Minimalism - shadcn/ui based design system for AdaSystems platform",
+  "main": "index.ts",
+  "types": "index.ts",
   "scripts": {
-    "dev": "python -m http.server 8080 --directory showcase",
-    "serve": "python -m http.server 8080 --directory showcase",
-    "build": "echo 'No build step needed - pure CSS design system'",
-    "lint": "echo 'No lint step configured'",
-    "test": "echo 'No test step configured'"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "build-css": "tailwindcss -i ./globals.css -o ./dist/ada-design-system.css --watch",
+    "build-dist": "tsc && tailwindcss -i ./globals.css -o ./dist/ada-design-system.css",
+    "showcase": "python -m http.server 8080 --directory showcase"
   },
   "keywords": [
     "design-system",
-    "css",
+    "shadcn",
+    "tailwindcss",
+    "react",
+    "typescript",
     "components",
     "ada",
     "restaurant",
@@ -32,12 +38,44 @@
     "url": "https://github.com/julienmatondotezolo/AdaDesignSystem/issues"
   },
   "files": [
-    "ada-design-system.css",
-    "showcase/",
-    "docs/",
+    "components/",
+    "lib/",
+    "globals.css",
+    "tailwind.config.js",
+    "index.ts",
+    "dist/",
     "README.md"
   ],
   "engines": {
-    "node": ">=14.0.0"
+    "node": ">=18.0.0"
+  },
+  "peerDependencies": {
+    "react": ">=16.8.0",
+    "react-dom": ">=16.8.0"
+  },
+  "dependencies": {
+    "@radix-ui/react-label": "^2.0.2",
+    "@radix-ui/react-select": "^2.0.0",
+    "@radix-ui/react-slot": "^1.0.2",
+    "@radix-ui/react-switch": "^1.0.3",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.0.0",
+    "lucide-react": "^0.263.1",
+    "tailwind-merge": "^1.14.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "autoprefixer": "^10.0.1",
+    "eslint": "^8",
+    "eslint-config-next": "14.0.0",
+    "next": "14.0.0",
+    "postcss": "^8",
+    "react": "^18",
+    "react-dom": "^18",
+    "tailwindcss": "^3.3.0",
+    "tailwindcss-animate": "^1.0.7",
+    "typescript": "^5"
   }
 }
