@@ -110,12 +110,14 @@ function LoadingProgress({
           animation: "loading-slide 2s infinite ease-in-out"
         }}
       />
-      <style jsx>{`
-        @keyframes loading-slide {
-          0% { left: -33.333%; }
-          100% { left: 100%; }
-        }
-      `}</style>
+      <style dangerouslySetInnerHTML={{
+        __html: `
+          @keyframes loading-slide {
+            0% { left: -33.333%; }
+            100% { left: 100%; }
+          }
+        `
+      }} />
     </div>
   )
 }
