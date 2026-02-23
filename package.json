@@ -1,6 +1,6 @@
 {
   "name": "ada-design-system",
-  "version": "3.1.1",
+  "version": "3.1.2",
   "description": "Professional typography without gradients - Clean shadcn/ui design system with French/Dutch/English support",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
