@@ -11,6 +11,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '.
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '../components/ui/table';
 import { AdaLogo } from '../components/ui/ada-logo';
 import { LanguageSwitcher, useLocale } from '../components/ui/language-switcher';
+import { FontViewer } from '../components/ui/font-viewer';
 import { t, type Locale } from '../lib/i18n';
 import { Plus, Settings, User } from 'lucide-react';
 
@@ -178,6 +179,26 @@ export default function HomePage() {
               </div>
             </div>
           </div>
+        </section>
+
+        {/* Font Viewer Section */}
+        <section className="mb-20">
+          <h2 className="text-3xl font-bold text-foreground mb-12 text-center">
+            Font Viewer
+          </h2>
+          <div className="text-center mb-8">
+            <Button variant="outline" asChild>
+              <a href="/fonts">
+                {locale === 'fr' ? 'Voir la Présentation Complète des Polices →' : 
+                 locale === 'nl' ? 'Bekijk Volledige Lettertype Showcase →' : 
+                 'View Full Typography Showcase →'}
+              </a>
+            </Button>
+          </div>
+          <FontViewer 
+            language={locale}
+            className="max-w-4xl mx-auto"
+          />
         </section>
 
         {/* Clean Components */}
