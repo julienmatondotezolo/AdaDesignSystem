@@ -141,9 +141,10 @@ export default function Component() {
 - ✅ **Avatar** - User profile components
 
 ### Language & Accessibility
-- ✅ **LanguageSwitcher** - Elegant language selection (EN/FR/NL)
-- ✅ **FontViewer** - Professional typography showcase
+- ✅ **LanguageSwitcher** - Elegant language selection with SVG flag icons (EN/FR/NL)
+- ✅ **FontViewer** - Professional typography showcase  
 - ✅ **Multilingual Support** - Complete translation system
+- ✅ **Cross-Platform Flags** - SVG flag icons work on Windows/Mac/Linux
 - ✅ **International Formatting** - Date/currency per locale
 
 ### Your Brand Features
@@ -160,7 +161,7 @@ export default function Component() {
 ### 1. Install Dependencies
 
 ```bash
-npm install @radix-ui/react-label @radix-ui/react-select @radix-ui/react-slot @radix-ui/react-switch class-variance-authority clsx lucide-react tailwind-merge
+npm install @radix-ui/react-label @radix-ui/react-select @radix-ui/react-slot @radix-ui/react-switch class-variance-authority clsx country-flag-icons lucide-react tailwind-merge
 ```
 
 ### 2. Configure Tailwind CSS

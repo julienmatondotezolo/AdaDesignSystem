@@ -2,6 +2,11 @@ import * as React from "react"
 import { cn } from "@/lib/utils"
 import { type Locale } from "@/lib/i18n"
 
+// Import flag icons from country-flag-icons package
+import { US } from 'country-flag-icons/react/3x2'
+import { FR } from 'country-flag-icons/react/3x2' 
+import { NL } from 'country-flag-icons/react/3x2'
+
 interface LanguageSwitcherProps {
   currentLocale: Locale
   onLocaleChange: (locale: Locale) => void
@@ -11,9 +16,9 @@ interface LanguageSwitcherProps {
 }
 
 const languages = {
-  en: { label: 'English', flag: '🇺🇸' },
-  fr: { label: 'Français', flag: '🇫🇷' },
-  nl: { label: 'Nederlands', flag: '🇳🇱' },
+  en: { label: 'English', FlagIcon: US },
+  fr: { label: 'Français', FlagIcon: FR },
+  nl: { label: 'Nederlands', FlagIcon: NL },
 }
 
 export function LanguageSwitcher({
@@ -38,6 +43,7 @@ export function LanguageSwitcher({
   }
 
   if (variant === 'minimal') {
+    const CurrentFlag = languages[currentLocale].FlagIcon
     return (
       <div className={cn("relative", className)}>
         <button
@@ -49,7 +55,7 @@ export function LanguageSwitcher({
             sizeStyles[size],
           )}
         >
-          <span className="text-base">{languages[currentLocale].flag}</span>
+          <CurrentFlag className="w-4 h-3" />
           <span className="font-medium">{currentLocale.toUpperCase()}</span>
           <svg
             className={cn(
@@ -66,29 +72,33 @@ export function LanguageSwitcher({
 
         {isOpen && (
           <div className="absolute top-full mt-1 left-0 z-50 bg-popover border border-border rounded-md shadow-lg min-w-[120px]">
-            {Object.entries(languages).map(([locale, lang]) => (
-              <button
-                key={locale}
-                onClick={() => {
-                  onLocaleChange(locale as Locale)
-                  setIsOpen(false)
-                }}
-                className={cn(
-                  "w-full flex items-center gap-3 px-3 py-2 text-left hover:bg-muted/50",
-                  "first:rounded-t-md last:rounded-b-md transition-colors",
-                  currentLocale === locale && "bg-muted text-foreground font-medium"
-                )}
-              >
-                <span className="text-base">{lang.flag}</span>
-                <span className="text-sm">{lang.label}</span>
-              </button>
-            ))}
+            {Object.entries(languages).map(([locale, lang]) => {
+              const FlagIcon = lang.FlagIcon
+              return (
+                <button
+                  key={locale}
+                  onClick={() => {
+                    onLocaleChange(locale as Locale)
+                    setIsOpen(false)
+                  }}
+                  className={cn(
+                    "w-full flex items-center gap-3 px-3 py-2 text-left hover:bg-muted/50",
+                    "first:rounded-t-md last:rounded-b-md transition-colors",
+                    currentLocale === locale && "bg-muted text-foreground font-medium"
+                  )}
+                >
+                  <FlagIcon className="w-4 h-3" />
+                  <span className="text-sm">{lang.label}</span>
+                </button>
+              )
+            })}
           </div>
         )}
       </div>
     )
   }
 
+  const CurrentFlag = languages[currentLocale].FlagIcon
   return (
     <div className={cn("relative", className)}>
       <button
@@ -100,7 +110,7 @@ export function LanguageSwitcher({
           sizeStyles[size],
         )}
       >
-        <span className="text-base">{languages[currentLocale].flag}</span>
+        <CurrentFlag className="w-5 h-4" />
         <span className="font-medium">{languages[currentLocale].label}</span>
         <svg
           className={cn(
@@ -117,23 +127,26 @@ export function LanguageSwitcher({
 
       {isOpen && (
         <div className="absolute top-full mt-1 left-0 z-50 bg-popover border border-border rounded-md shadow-lg min-w-[150px]">
-          {Object.entries(languages).map(([locale, lang]) => (
-            <button
-              key={locale}
-              onClick={() => {
-                onLocaleChange(locale as Locale)
-                setIsOpen(false)
-              }}
-              className={cn(
-                "w-full flex items-center gap-3 px-3 py-2 text-left hover:bg-muted/50",
-                "first:rounded-t-md last:rounded-b-md transition-colors",
-                currentLocale === locale && "bg-muted text-foreground font-medium"
-              )}
-            >
-              <span className="text-base">{lang.flag}</span>
-              <span className="text-sm">{lang.label}</span>
-            </button>
-          ))}
+          {Object.entries(languages).map(([locale, lang]) => {
+            const FlagIcon = lang.FlagIcon
+            return (
+              <button
+                key={locale}
+                onClick={() => {
+                  onLocaleChange(locale as Locale)
+                  setIsOpen(false)
+                }}
+                className={cn(
+                  "w-full flex items-center gap-3 px-3 py-2 text-left hover:bg-muted/50",
+                  "first:rounded-t-md last:rounded-b-md transition-colors",
+                  currentLocale === locale && "bg-muted text-foreground font-medium"
+                )}
+              >
+                <FlagIcon className="w-5 h-4" />
+                <span className="text-sm">{lang.label}</span>
+              </button>
+            )
+          })}
         </div>
       )}
     </div>
