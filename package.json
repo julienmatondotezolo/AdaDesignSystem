@@ -15,8 +15,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "npm run build-package && next build",
-    "build-package": "tsc --project tsconfig.package.json && npm run build-css",
-    "build-css": "tailwindcss -i ./app/globals.css -o ./dist/ada-design-system.css --minify",
+    "build-package": "npx tsc --project tsconfig.package.json && npm run build-css",
+    "build-css": "npx tailwindcss -i ./app/globals.css -o ./dist/ada-design-system.css --minify",
     "start": "next start",
     "lint": "next lint",
     "showcase": "python -m http.server 8080 --directory showcase",
