@@ -1,0 +1,101 @@
+/* ==========================================================================
+   ADA LOGO COMPONENT - CSS ONLY VERSION
+   ========================================================================== */
+
+.ada-logo {
+  display: inline-block;
+  vertical-align: middle;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Size Variants */
+.ada-logo--small {
+  width: 172px;
+  height: 75px;
+}
+
+.ada-logo--medium {
+  width: 275px;
+  height: 120px;
+}
+
+.ada-logo--large {
+  width: 413px;
+  height: 180px;
+}
+
+.ada-logo--xl {
+  width: 689px;
+  height: 300px;
+}
+
+/* Color Variants */
+.ada-logo--primary path {
+  fill: var(--ada-primary, #4d6aff);
+  stroke: var(--ada-primary-dark, #3d54cc);
+}
+
+.ada-logo--secondary path {
+  fill: var(--ada-secondary, #45b9ee);
+  stroke: var(--ada-secondary-dark, #2894d1);
+}
+
+.ada-logo--monochrome path {
+  fill: var(--ada-gray-800, #1f2937);
+  stroke: var(--ada-gray-700, #374151);
+}
+
+.ada-logo--white path {
+  fill: var(--ada-white, #ffffff);
+  stroke: var(--ada-gray-200, #e5e7eb);
+}
+
+/* Hover Effects */
+.ada-logo--interactive {
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.ada-logo--interactive:hover {
+  opacity: 0.8;
+}
+
+.ada-logo--interactive:hover.ada-logo--primary path {
+  fill: var(--ada-primary-hover, #3b56e6);
+}
+
+.ada-logo--interactive:hover.ada-logo--secondary path {
+  fill: var(--ada-secondary-hover, #2ea8e6);
+}
+
+/* Responsive Behavior */
+@media (max-width: 768px) {
+  .ada-logo--responsive {
+    width: 172px;
+    height: 75px;
+  }
+}
+
+@media (max-width: 480px) {
+  .ada-logo--responsive {
+    width: 138px;
+    height: 60px;
+  }
+}
+
+/* Animation Support */
+.ada-logo--animated path {
+  animation: ada-logo-fade-in 0.6s ease-out;
+}
+
+@keyframes ada-logo-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

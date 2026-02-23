@@ -51,6 +51,7 @@ Our design system creates premium software interfaces that feel structured, effi
 ## 🧩 Components
 
 ### Core Components
+- ✅ **Logo** - Brand logo with multiple variants (React + CSS)
 - ✅ **Buttons** - Primary, Secondary, Ghost, Icon
 - ✅ **Cards** - Product, Info, Stats, Interactive
 - ✅ **Inputs** - Text, Email, Password, Search, Select
@@ -88,6 +89,23 @@ open showcase/index.html
 <!-- Use components -->
 <button class="ada-btn ada-btn--primary">Primary Button</button>
 <div class="ada-card">Content here</div>
+
+<!-- ADA Logo -->
+<svg class="ada-logo ada-logo--medium ada-logo--primary" viewBox="0 0 689.5 300.5">
+  <path d="M2.228,298.969 L80.111,298.969 L153.894,114.729..." />
+</svg>
+```
+
+### React Usage
+```jsx
+import { AdaLogo } from './components/logo/AdaLogo';
+
+// Default logo
+<AdaLogo />
+
+// Custom variants
+<AdaLogo size="large" variant="secondary" />
+<AdaLogo size="custom" width="400px" height="175px" variant="white" />
 ```
 
 ---
