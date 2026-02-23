@@ -7,8 +7,8 @@
 
 @layer base {
   :root {
-    /* Modern ADA Design System - Light Mode */
-    --background: 0 0% 100%;
+    /* ADA Design System - Your Original Brand Colors */
+    --background: 0 0% 100%; /* Pure White #FFFFFF */
     --foreground: 224 71% 4%;
     
     --card: 0 0% 100%;
@@ -17,12 +17,12 @@
     --popover: 0 0% 100%;
     --popover-foreground: 224 71% 4%;
     
-    /* Primary - Modern Blue */
-    --primary: 221 83% 53%;
+    /* Primary - Electric/Professional Blue #4d6aff */
+    --primary: 232 100% 66%;
     --primary-foreground: 210 40% 98%;
     
-    /* Secondary - Modern Purple */
-    --secondary: 262 83% 58%;
+    /* Secondary - Tech/Atmospheric Blue #45b9ee */
+    --secondary: 201 85% 60%;
     --secondary-foreground: 210 40% 98%;
     
     /* Muted */
