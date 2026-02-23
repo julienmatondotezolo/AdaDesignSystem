@@ -1,0 +1,43 @@
+{
+  "name": "ada-design-system",
+  "version": "1.0.0",
+  "description": "Culinary Minimalism - A modern design system for AdaSystems platform",
+  "main": "ada-design-system.css",
+  "scripts": {
+    "dev": "python -m http.server 8080 --directory showcase",
+    "serve": "python -m http.server 8080 --directory showcase",
+    "build": "echo 'No build step needed - pure CSS design system'",
+    "lint": "echo 'No lint step configured'",
+    "test": "echo 'No test step configured'"
+  },
+  "keywords": [
+    "design-system",
+    "css",
+    "components",
+    "ada",
+    "restaurant",
+    "hospitality",
+    "minimalism",
+    "ui",
+    "ux"
+  ],
+  "author": "Emji Devimanus <emjisolutions@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/julienmatondotezolo/AdaDesignSystem.git"
+  },
+  "homepage": "https://github.com/julienmatondotezolo/AdaDesignSystem#readme",
+  "bugs": {
+    "url": "https://github.com/julienmatondotezolo/AdaDesignSystem/issues"
+  },
+  "files": [
+    "ada-design-system.css",
+    "showcase/",
+    "docs/",
+    "README.md"
+  ],
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}

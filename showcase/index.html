@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ada Design System - Culinary Minimalism</title>
+    <link rel="stylesheet" href="../ada-design-system.css">
+    <style>
+        /* Showcase specific styles */
+        body {
+            background: linear-gradient(135deg, #f9fafb 0%, #e5e7eb 100%);
+        }
+        
+        .showcase-header {
+            background: linear-gradient(135deg, var(--ada-primary) 0%, var(--ada-secondary) 100%);
+            color: white;
+            padding: var(--ada-space-12) 0;
+            text-align: center;
+            margin-bottom: var(--ada-space-12);
+        }
+        
+        .showcase-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--ada-space-6);
+        }
+        
+        .showcase-section {
+            margin-bottom: var(--ada-space-16);
+        }
+        
+        .showcase-section__title {
+            margin-bottom: var(--ada-space-8);
+            font-size: var(--ada-text-3xl);
+            font-weight: var(--ada-weight-bold);
+            color: var(--ada-text-primary);
+            border-bottom: 3px solid var(--ada-primary);
+            padding-bottom: var(--ada-space-4);
+            display: inline-block;
+        }
+        
+        .showcase-grid {
+            display: grid;
+            gap: var(--ada-space-6);
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        }
+        
+        .showcase-grid--2 {
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+        }
+        
+        .showcase-grid--3 {
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        }
+        
+        .component-demo {
+            background: white;
+            padding: var(--ada-space-6);
+            border-radius: var(--ada-radius-lg);
+            box-shadow: var(--ada-shadow-md);
+        }
+        
+        .component-demo__title {
+            margin: 0 0 var(--ada-space-4) 0;
+            font-size: var(--ada-text-lg);
+            font-weight: var(--ada-weight-semibold);
+            color: var(--ada-text-primary);
+        }
+        
+        .button-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: var(--ada-space-3);
+        }
+        
+        .color-swatch {
+            display: flex;
+            align-items: center;
+            gap: var(--ada-space-3);
+            padding: var(--ada-space-3);
+            border: 1px solid var(--ada-border-light);
+            border-radius: var(--ada-radius-base);
+        }
+        
+        .color-swatch__color {
+            width: 48px;
+            height: 48px;
+            border-radius: var(--ada-radius-base);
+            border: 1px solid var(--ada-border-light);
+        }
+        
+        .color-swatch__info {
+            flex: 1;
+        }
+        
+        .color-swatch__name {
+            font-weight: var(--ada-weight-medium);
+            font-size: var(--ada-text-sm);
+        }
+        
+        .color-swatch__value {
+            font-family: var(--ada-font-mono);
+            font-size: var(--ada-text-xs);
+            color: var(--ada-text-muted);
+        }
+        
+        .typography-demo {
+            font-family: var(--ada-font-primary);
+        }
+        
+        .font-stack {
+            margin-bottom: var(--ada-space-4);
+        }
+        
+        .font-stack__name {
+            font-size: var(--ada-text-sm);
+            font-weight: var(--ada-weight-medium);
+            color: var(--ada-text-secondary);
+            margin-bottom: var(--ada-space-2);
+        }
+        
+        .font-stack__demo {
+            font-size: var(--ada-text-2xl);
+            margin-bottom: var(--ada-space-2);
+        }
+        
+        .spacing-demo {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--ada-space-4);
+        }
+        
+        .spacing-item {
+            display: flex;
+            align-items: center;
+            gap: var(--ada-space-2);
+        }
+        
+        .spacing-box {
+            background: var(--ada-primary);
+            border-radius: var(--ada-radius-sm);
+        }
+        
+        .ada-logo {
+            font-family: var(--ada-font-primary);
+            font-weight: var(--ada-weight-bold);
+            font-size: var(--ada-text-5xl);
+            background: linear-gradient(135deg, #ffffff 0%, rgba(255,255,255,0.8) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin: 0;
+        }
+        
+        .navigation-demo {
+            background: white;
+            border-radius: var(--ada-radius-lg);
+            overflow: hidden;
+            box-shadow: var(--ada-shadow-md);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="showcase-header">
+        <div class="showcase-container">
+            <h1 class="ada-logo">ADA</h1>
+            <p class="ada-text-xl" style="margin: var(--ada-space-4) 0 0 0; opacity: 0.9;">
+                Culinary Minimalism Design System
+            </p>
+            <p style="margin: var(--ada-space-2) 0 0 0; opacity: 0.8;">
+                Premium software interface for the hospitality industry
+            </p>
+        </div>
+    </header>
+
+    <main class="showcase-container">
+        
+        <!-- Colors Section -->
+        <section class="showcase-section">
+            <h2 class="showcase-section__title">Colors</h2>
+            <div class="showcase-grid showcase-grid--3">
+                <div class="component-demo">
+                    <h3 class="component-demo__title">Primary Colors</h3>
+                    <div style="display: flex; flex-direction: column; gap: var(--ada-space-3);">
+                        <div class="color-swatch">
+                            <div class="color-swatch__color" style="background: #4d6aff;"></div>
+                            <div class="color-swatch__info">
+                                <div class="color-swatch__name">Primary Blue</div>
+                                <div class="color-swatch__value">#4d6aff</div>
+                            </div>
+                        </div>
+                        <div class="color-swatch">
+                            <div class="color-swatch__color" style="background: #45b9ee;"></div>
+                            <div class="color-swatch__info">
+                                <div class="color-swatch__name">Secondary Light Blue</div>
+                                <div class="color-swatch__value">#45b9ee</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="component-demo">
+                    <h3 class="component-demo__title">Semantic Colors</h3>
+                    <div style="display: flex; flex-direction: column; gap: var(--ada-space-3);">
+                        <div class="color-swatch">
+                            <div class="color-swatch__color" style="background: #10b981;"></div>
+                            <div class="color-swatch__info">
+                                <div class="color-swatch__name">Success</div>
+                                <div class="color-swatch__value">#10b981</div>
+                            </div>
+                        </div>
+                        <div class="color-swatch">
+                            <div class="color-swatch__color" style="background: #f59e0b;"></div>
+                            <div class="color-swatch__info">
+                                <div class="color-swatch__name">Warning</div>
+                                <div class="color-swatch__value">#f59e0b</div>
+                            </div>
+                        </div>
+                        <div class="color-swatch">
+                            <div class="color-swatch__color" style="background: #ef4444;"></div>
+                            <div class="color-swatch__info">
+                                <div class="color-swatch__name">Error</div>
+                                <div class="color-swatch__value">#ef4444</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="component-demo">
+                    <h3 class="component-demo__title">Neutral Colors</h3>
+                    <div style="display: flex; flex-direction: column; gap: var(--ada-space-3);">
+                        <div class="color-swatch">
+                            <div class="color-swatch__color" style="background: #ffffff; border: 2px solid var(--ada-border-medium);"></div>
+                            <div class="color-swatch__info">
+                                <div class="color-swatch__name">White</div>
+                                <div class="color-swatch__value">#ffffff</div>
+                            </div>
+                        </div>
+                        <div class="color-swatch">
+                            <div class="color-swatch__color" style="background: #6b7280;"></div>
+                            <div class="color-swatch__info">
+                                <div class="color-swatch__name">Gray</div>
+                                <div class="color-swatch__value">#6b7280</div>
+                            </div>
+                        </div>
+                        <div class="color-swatch">
+                            <div class="color-swatch__color" style="background: #1f2937;"></div>
+                            <div class="color-swatch__info">
+                                <div class="color-swatch__name">Charcoal</div>
+                                <div class="color-swatch__value">#1f2937</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Typography Section -->
+        <section class="showcase-section">
+            <h2 class="showcase-section__title">Typography</h2>
+            <div class="showcase-grid showcase-grid--2">
+                <div class="component-demo">
+                    <h3 class="component-demo__title">Font Families</h3>
+                    <div class="font-stack">
+                        <div class="font-stack__name">Space Grotesk (Primary)</div>
+                        <div class="font-stack__demo" style="font-family: var(--ada-font-primary);">
+                            The quick brown fox jumps over the lazy dog
+                        </div>
+                    </div>
+                    <div class="font-stack">
+                        <div class="font-stack__name">Geist Sans (Secondary)</div>
+                        <div class="font-stack__demo" style="font-family: var(--ada-font-secondary);">
+                            The quick brown fox jumps over the lazy dog
+                        </div>
+                    </div>
+                    <div class="font-stack">
+                        <div class="font-stack__name">JetBrains Mono (Monospace)</div>
+                        <div class="font-stack__demo" style="font-family: var(--ada-font-mono); font-size: var(--ada-text-lg);">
+                            const ada = "design-system";
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="component-demo">
+                    <h3 class="component-demo__title">Type Scale</h3>
+                    <div class="typography-demo">
+                        <h1>Heading 1 - 36px Bold</h1>
+                        <h2>Heading 2 - 30px Semibold</h2>
+                        <h3>Heading 3 - 24px Semibold</h3>
+                        <h4>Heading 4 - 20px Semibold</h4>
+                        <h5>Heading 5 - 18px Semibold</h5>
+                        <h6>Heading 6 - 16px Medium</h6>
+                        <p>Body text - 16px Regular with relaxed line height</p>
+                        <small class="ada-text-sm">Small text - 14px Regular</small>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Spacing Section -->
+        <section class="showcase-section">
+            <h2 class="showcase-section__title">Spacing Scale</h2>
+            <div class="component-demo">
+                <div class="spacing-demo">
+                    <div class="spacing-item">
+                        <div class="spacing-box" style="width: 4px; height: 24px;"></div>
+                        <span class="ada-text-sm ada-font-mono">4px</span>
+                    </div>
+                    <div class="spacing-item">
+                        <div class="spacing-box" style="width: 8px; height: 24px;"></div>
+                        <span class="ada-text-sm ada-font-mono">8px</span>
+                    </div>
+                    <div class="spacing-item">
+                        <div class="spacing-box" style="width: 12px; height: 24px;"></div>
+                        <span class="ada-text-sm ada-font-mono">12px</span>
+                    </div>
+                    <div class="spacing-item">
+                        <div class="spacing-box" style="width: 16px; height: 24px;"></div>
+                        <span class="ada-text-sm ada-font-mono">16px</span>
+                    </div>
+                    <div class="spacing-item">
+                        <div class="spacing-box" style="width: 24px; height: 24px;"></div>
+                        <span class="ada-text-sm ada-font-mono">24px</span>
+                    </div>
+                    <div class="spacing-item">
+                        <div class="spacing-box" style="width: 32px; height: 24px;"></div>
+                        <span class="ada-text-sm ada-font-mono">32px</span>
+                    </div>
+                    <div class="spacing-item">
+                        <div class="spacing-box" style="width: 48px; height: 24px;"></div>
+                        <span class="ada-text-sm ada-font-mono">48px</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Buttons Section -->
+        <section class="showcase-section">
+            <h2 class="showcase-section__title">Buttons</h2>
+            <div class="showcase-grid">
+                <div class="component-demo">
+                    <h3 class="component-demo__title">Primary Buttons</h3>
+                    <div class="button-grid">
+                        <button class="ada-btn ada-btn--primary ada-btn--sm">Small</button>
+                        <button class="ada-btn ada-btn--primary">Default</button>
+                        <button class="ada-btn ada-btn--primary ada-btn--lg">Large</button>
+                        <button class="ada-btn ada-btn--primary" disabled>Disabled</button>
+                    </div>
+                </div>
+                
+                <div class="component-demo">
+                    <h3 class="component-demo__title">Secondary Buttons</h3>
+                    <div class="button-grid">
+                        <button class="ada-btn ada-btn--secondary ada-btn--sm">Small</button>
+                        <button class="ada-btn ada-btn--secondary">Default</button>
+                        <button class="ada-btn ada-btn--secondary ada-btn--lg">Large</button>
+                        <button class="ada-btn ada-btn--secondary" disabled>Disabled</button>
+                    </div>
+                </div>
+                
+                <div class="component-demo">
+                    <h3 class="component-demo__title">Outline & Ghost</h3>
+                    <div class="button-grid">
+                        <button class="ada-btn ada-btn--outline">Outline</button>
+                        <button class="ada-btn ada-btn--ghost">Ghost</button>
+                        <button class="ada-btn ada-btn--success">Success</button>
+                        <button class="ada-btn ada-btn--danger">Danger</button>
+                    </div>
+                </div>
+                
+                <div class="component-demo">
+                    <h3 class="component-demo__title">Icon Buttons</h3>
+                    <div style="display: flex; gap: var(--ada-space-3); align-items: center;">
+                        <button class="ada-btn ada-btn--primary ada-btn--icon ada-btn--sm">+</button>
+                        <button class="ada-btn ada-btn--primary ada-btn--icon">+</button>
+                        <button class="ada-btn ada-btn--primary ada-btn--icon ada-btn--lg">+</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cards Section -->
+        <section class="showcase-section">
+            <h2 class="showcase-section__title">Cards</h2>
+            <div class="showcase-grid">
+                <div class="ada-card">
+                    <div class="ada-card__header">
+                        <h4 class="ada-card__title">Basic Card</h4>
+                        <p class="ada-card__subtitle">Simple card with header and body</p>
+                    </div>
+                    <div class="ada-card__body">
+                        <p>This is a basic card component with header, body, and optional footer sections. Perfect for displaying information in organized blocks.</p>
+                    </div>
+                </div>
+                
+                <div class="ada-card ada-card--interactive">
+                    <div class="ada-card__header">
+                        <h4 class="ada-card__title">Interactive Card</h4>
+                        <p class="ada-card__subtitle">Hover for interaction effect</p>
+                    </div>
+                    <div class="ada-card__body">
+                        <p>Interactive cards lift on hover and can be used for clickable content like product cards or navigation items.</p>
+                    </div>
+                    <div class="ada-card__footer">
+                        <button class="ada-btn ada-btn--primary">Learn More</button>
+                    </div>
+                </div>
+                
+                <div class="ada-card ada-card--elevated">
+                    <div class="ada-card__header">
+                        <h4 class="ada-card__title">Product Card</h4>
+                        <div style="display: flex; gap: var(--ada-space-2);">
+                            <span class="ada-badge ada-badge--success">
+                                <span class="ada-badge__dot"></span>
+                                In Stock
+                            </span>
+                            <span class="ada-badge ada-badge--primary">Featured</span>
+                        </div>
+                    </div>
+                    <div class="ada-card__body">
+                        <div style="width: 100%; height: 120px; background: var(--ada-gray-100); border-radius: var(--ada-radius-base); margin-bottom: var(--ada-space-4); display: flex; align-items: center; justify-content: center; color: var(--ada-text-muted);">
+                            Product Image
+                        </div>
+                        <h5 style="margin: 0 0 var(--ada-space-2) 0;">Gourmet Pasta Dish</h5>
+                        <p class="ada-text-2xl ada-weight-bold" style="margin: 0; color: var(--ada-primary);">€24.99</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Forms Section -->
+        <section class="showcase-section">
+            <h2 class="showcase-section__title">Forms & Inputs</h2>
+            <div class="showcase-grid showcase-grid--2">
+                <div class="component-demo">
+                    <h3 class="component-demo__title">Form Elements</h3>
+                    <form>
+                        <div class="ada-form-group">
+                            <label class="ada-label ada-label--required" for="email">Email Address</label>
+                            <input type="email" id="email" class="ada-input" placeholder="Enter your email">
+                            <span class="ada-help-text">We'll never share your email</span>
+                        </div>
+                        
+                        <div class="ada-form-group">
+                            <label class="ada-label" for="password">Password</label>
+                            <input type="password" id="password" class="ada-input" placeholder="Enter password">
+                        </div>
+                        
+                        <div class="ada-form-group">
+                            <label class="ada-label" for="restaurant">Restaurant</label>
+                            <select id="restaurant" class="ada-select">
+                                <option>Select restaurant</option>
+                                <option>L'Osteria Deerlijk</option>
+                                <option>Brasserie Central</option>
+                                <option>Café Modern</option>
+                            </select>
+                        </div>
+                        
+                        <div class="ada-form-group">
+                            <label class="ada-label" for="notes">Notes</label>
+                            <textarea id="notes" class="ada-textarea" placeholder="Additional notes..."></textarea>
+                        </div>
+                    </form>
+                </div>
+                
+                <div class="component-demo">
+                    <h3 class="component-demo__title">Input States</h3>
+                    <div style="display: flex; flex-direction: column; gap: var(--ada-space-4);">
+                        <div>
+                            <label class="ada-label">Normal Input</label>
+                            <input type="text" class="ada-input" placeholder="Normal state">
+                        </div>
+                        
+                        <div>
+                            <label class="ada-label">Success Input</label>
+                            <input type="text" class="ada-input ada-input--success" value="Valid input">
+                            <span class="ada-help-text ada-help-text--success">✓ Input is valid</span>
+                        </div>
+                        
+                        <div>
+                            <label class="ada-label">Error Input</label>
+                            <input type="text" class="ada-input ada-input--error" value="Invalid input">
+                            <span class="ada-help-text ada-help-text--error">✗ This field is required</span>
+                        </div>
+                        
+                        <div>
+                            <label class="ada-label">Disabled Input</label>
+                            <input type="text" class="ada-input" value="Disabled" disabled>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Switches & Controls -->
+        <section class="showcase-section">
+            <h2 class="showcase-section__title">Switches & Controls</h2>
+            <div class="showcase-grid showcase-grid--3">
+                <div class="component-demo">
+                    <h3 class="component-demo__title">Toggle Switches</h3>
+                    <div style="display: flex; flex-direction: column; gap: var(--ada-space-4);">
+                        <label class="ada-switch">
+                            <input type="checkbox" class="ada-switch__input">
+                            <span class="ada-switch__track">
+                                <span class="ada-switch__thumb"></span>
+                            </span>
+                            <span class="ada-switch__label">Enable notifications</span>
+                        </label>
+                        
+                        <label class="ada-switch">
+                            <input type="checkbox" class="ada-switch__input" checked>
+                            <span class="ada-switch__track">
+                                <span class="ada-switch__thumb"></span>
+                            </span>
+                            <span class="ada-switch__label">Auto-sync enabled</span>
+                        </label>
+                        
+                        <label class="ada-switch">
+                            <input type="checkbox" class="ada-switch__input" disabled>
+                            <span class="ada-switch__track">
+                                <span class="ada-switch__thumb"></span>
+                            </span>
+                            <span class="ada-switch__label">Disabled option</span>
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="component-demo">
+                    <h3 class="component-demo__title">Status Badges</h3>
+                    <div style="display: flex; flex-direction: column; gap: var(--ada-space-3);">
+                        <span class="ada-badge ada-badge--success">
+                            <span class="ada-badge__dot"></span>
+                            Active
+                        </span>
+                        <span class="ada-badge ada-badge--warning">
+                            <span class="ada-badge__dot"></span>
+                            Pending
+                        </span>
+                        <span class="ada-badge ada-badge--error">
+                            <span class="ada-badge__dot"></span>
+                            Error
+                        </span>
+                        <span class="ada-badge ada-badge--primary">
+                            <span class="ada-badge__dot"></span>
+                            Processing
+                        </span>
+                        <span class="ada-badge ada-badge--gray">
+                            <span class="ada-badge__dot"></span>
+                            Inactive
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="component-demo">
+                    <h3 class="component-demo__title">Progress & Loading</h3>
+                    <div style="display: flex; flex-direction: column; gap: var(--ada-space-4);">
+                        <div>
+                            <div class="ada-text-sm ada-text-secondary" style="margin-bottom: var(--ada-space-2);">Upload Progress (75%)</div>
+                            <div class="ada-progress">
+                                <div class="ada-progress__bar" style="width: 75%;"></div>
+                            </div>
+                        </div>
+                        
+                        <div style="display: flex; align-items: center; gap: var(--ada-space-3);">
+                            <span class="ada-spinner"></span>
+                            <span class="ada-text-sm">Loading...</span>
+                        </div>
+                        
+                        <div style="display: flex; align-items: center; gap: var(--ada-space-3);">
+                            <span class="ada-spinner ada-spinner--lg"></span>
+                            <span>Processing data...</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Navigation & Tabs -->
+        <section class="showcase-section">
+            <h2 class="showcase-section__title">Navigation & Tabs</h2>
+            <div class="navigation-demo">
+                <div class="ada-tabs">
+                    <ul class="ada-tabs__list">
+                        <li class="ada-tabs__item">
+                            <button class="ada-tabs__button ada-tabs__button--active">Dashboard</button>
+                        </li>
+                        <li class="ada-tabs__item">
+                            <button class="ada-tabs__button">Menu Items</button>
+                        </li>
+                        <li class="ada-tabs__item">
+                            <button class="ada-tabs__button">Orders</button>
+                        </li>
+                        <li class="ada-tabs__item">
+                            <button class="ada-tabs__button">Analytics</button>
+                        </li>
+                        <li class="ada-tabs__item">
+                            <button class="ada-tabs__button">Settings</button>
+                        </li>
+                    </ul>
+                </div>
+                <div style="padding: var(--ada-space-6);">
+                    <h4>Dashboard Overview</h4>
+                    <p>This is the dashboard tab content. Switch between tabs to see different sections of the application.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tables -->
+        <section class="showcase-section">
+            <h2 class="showcase-section__title">Data Tables</h2>
+            <div class="ada-table-container">
+                <table class="ada-table">
+                    <thead>
+                        <tr>
+                            <th>Item</th>
+                            <th>Price</th>
+                            <th>Quantity</th>
+                            <th>Status</th>
+                            <th>Sales</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div style="display: flex; align-items: center; gap: var(--ada-space-3);">
+                                    <div style="width: 40px; height: 40px; background: var(--ada-gray-200); border-radius: var(--ada-radius-base);"></div>
+                                    <div>
+                                        <div class="ada-weight-medium">Pasta alla Carbonara</div>
+                                        <div class="ada-text-sm ada-text-secondary">Classic Italian pasta</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="ada-weight-medium">€18.50</td>
+                            <td>24</td>
+                            <td>
+                                <span class="ada-badge ada-badge--success">
+                                    <span class="ada-badge__dot"></span>
+                                    Available
+                                </span>
+                            </td>
+                            <td>156</td>
+                            <td>
+                                <div style="display: flex; gap: var(--ada-space-2);">
+                                    <button class="ada-btn ada-btn--ghost ada-btn--sm">Edit</button>
+                                    <button class="ada-btn ada-btn--ghost ada-btn--sm">Delete</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div style="display: flex; align-items: center; gap: var(--ada-space-3);">
+                                    <div style="width: 40px; height: 40px; background: var(--ada-gray-200); border-radius: var(--ada-radius-base);"></div>
+                                    <div>
+                                        <div class="ada-weight-medium">Margherita Pizza</div>
+                                        <div class="ada-text-sm ada-text-secondary">Traditional tomato and mozzarella</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="ada-weight-medium">€16.00</td>
+                            <td>12</td>
+                            <td>
+                                <span class="ada-badge ada-badge--warning">
+                                    <span class="ada-badge__dot"></span>
+                                    Low Stock
+                                </span>
+                            </td>
+                            <td>203</td>
+                            <td>
+                                <div style="display: flex; gap: var(--ada-space-2);">
+                                    <button class="ada-btn ada-btn--ghost ada-btn--sm">Edit</button>
+                                    <button class="ada-btn ada-btn--ghost ada-btn--sm">Delete</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div style="display: flex; align-items: center; gap: var(--ada-space-3);">
+                                    <div style="width: 40px; height: 40px; background: var(--ada-gray-200); border-radius: var(--ada-radius-base);"></div>
+                                    <div>
+                                        <div class="ada-weight-medium">Caesar Salad</div>
+                                        <div class="ada-text-sm ada-text-secondary">Fresh romaine with parmesan</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="ada-weight-medium">€12.00</td>
+                            <td>0</td>
+                            <td>
+                                <span class="ada-badge ada-badge--error">
+                                    <span class="ada-badge__dot"></span>
+                                    Out of Stock
+                                </span>
+                            </td>
+                            <td>89</td>
+                            <td>
+                                <div style="display: flex; gap: var(--ada-space-2);">
+                                    <button class="ada-btn ada-btn--ghost ada-btn--sm">Edit</button>
+                                    <button class="ada-btn ada-btn--ghost ada-btn--sm">Delete</button>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Modal Demo -->
+        <section class="showcase-section">
+            <h2 class="showcase-section__title">Modal & Overlay</h2>
+            <div class="component-demo">
+                <h3 class="component-demo__title">Modal Dialog</h3>
+                <p>Click the button below to open a modal dialog demonstration.</p>
+                <button class="ada-btn ada-btn--primary" onclick="openModal()">Open Modal</button>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Modal -->
+    <div class="ada-modal" id="demoModal">
+        <div class="ada-modal__content ada-modal__content--md">
+            <div class="ada-modal__header">
+                <h3 class="ada-modal__title">Edit Menu Item</h3>
+                <button class="ada-modal__close" onclick="closeModal()">&times;</button>
+            </div>
+            <div class="ada-modal__body">
+                <form>
+                    <div class="ada-form-group">
+                        <label class="ada-label" for="modalItemName">Item Name</label>
+                        <input type="text" id="modalItemName" class="ada-input" value="Pasta alla Carbonara">
+                    </div>
+                    <div class="ada-form-group">
+                        <label class="ada-label" for="modalPrice">Price</label>
+                        <input type="number" id="modalPrice" class="ada-input" value="18.50" step="0.01">
+                    </div>
+                    <div class="ada-form-group">
+                        <label class="ada-label" for="modalDescription">Description</label>
+                        <textarea id="modalDescription" class="ada-textarea">Classic Italian pasta with eggs, cheese, and pancetta</textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="ada-modal__footer">
+                <button class="ada-btn ada-btn--ghost" onclick="closeModal()">Cancel</button>
+                <button class="ada-btn ada-btn--primary">Save Changes</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openModal() {
+            document.getElementById('demoModal').classList.add('ada-modal--open');
+        }
+        
+        function closeModal() {
+            document.getElementById('demoModal').classList.remove('ada-modal--open');
+        }
+        
+        // Close modal on backdrop click
+        document.getElementById('demoModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
+        
+        // Tab functionality
+        document.querySelectorAll('.ada-tabs__button').forEach(button => {
+            button.addEventListener('click', function() {
+                // Remove active class from all buttons
+                document.querySelectorAll('.ada-tabs__button').forEach(btn => {
+                    btn.classList.remove('ada-tabs__button--active');
+                });
+                // Add active class to clicked button
+                this.classList.add('ada-tabs__button--active');
+            });
+        });
+    </script>
+</body>
+</html>
