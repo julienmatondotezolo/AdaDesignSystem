@@ -1,111 +1,36 @@
-// ADA Design System v2.0 - Modern Component Exports
-// shadcn/ui based components with vibrant, modern design
+// ADA Design System - Main Export
+// Import this package in your projects: import { Button, Card } from 'ada-design-system'
 
 // Core UI Components
-export { Button, buttonVariants, type ButtonProps } from "./components/ui/button"
-export { 
-  Card, 
-  CardHeader, 
-  CardFooter, 
-  CardTitle, 
-  CardDescription, 
-  CardContent 
-} from "./components/ui/card"
-export { Input, type InputProps } from "./components/ui/input"
-export { Label } from "./components/ui/label"
-export { Badge, badgeVariants, type BadgeProps } from "./components/ui/badge"
-export { Switch } from "./components/ui/switch"
+export { AdaLogo } from './components/ui/ada-logo'
+export { Button, buttonVariants } from './components/ui/button'
+export { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from './components/ui/card'
+export { Input } from './components/ui/input'
+export { Label } from './components/ui/label'
+export { Badge, badgeVariants } from './components/ui/badge'
+export { Switch } from './components/ui/switch'
+export { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from './components/ui/select'
+export { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from './components/ui/table'
 
-// Form Components  
-export {
-  Select,
-  SelectGroup,
-  SelectValue,
-  SelectTrigger,
-  SelectContent,
-  SelectLabel,
-  SelectItem,
-  SelectSeparator,
-  SelectScrollUpButton,
-  SelectScrollDownButton,
-} from "./components/ui/select"
+// Language & Internationalization
+export { LanguageSwitcher, useLocale } from './components/ui/language-switcher'
+export { FontViewer, FontViewerShowcase, FontSpecimen } from './components/ui/font-viewer'
+export { t, getTranslation, detectLocale, DEFAULT_LOCALE, type Locale, type Translations } from './lib/i18n'
 
-// Data Display
-export {
-  Table,
-  TableHeader,
-  TableBody,
-  TableFooter,
-  TableHead,
-  TableRow,
-  TableCell,
-  TableCaption,
-} from "./components/ui/table"
+// Dialogs & Popups
+export { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from './components/ui/dialog'
 
-// Feedback & Overlays
-export {
-  type ToastProps,
-  type ToastActionElement,
-  ToastProvider,
-  ToastViewport,
-  Toast,
-  ToastTitle,
-  ToastDescription,
-  ToastClose,
-  ToastAction,
-} from "./components/ui/toast"
+// Loading States & Progress
+export { Progress, LoadingProgress, CircularProgress, StepProgress } from './components/ui/progress'
+export { Avatar, AvatarFallback, AvatarImage } from './components/ui/avatar'
+export { Skeleton, SkeletonAvatar, SkeletonButton, SkeletonText, SkeletonCard, SkeletonTable, SkeletonList } from './components/ui/skeleton'
+export { Spinner, LoadingOverlay, PulseLoader, PageLoader, LoadingButton } from './components/ui/spinner'
 
-export {
-  Dialog,
-  DialogPortal,
-  DialogOverlay,
-  DialogClose,
-  DialogTrigger,
-  DialogContent,
-  DialogHeader,
-  DialogFooter,
-  DialogTitle,
-  DialogDescription,
-} from "./components/ui/dialog"
-
-// Progress & Loading States
-export { 
-  Progress, 
-  LoadingProgress,
-  CircularProgress,
-  StepProgress,
-  progressVariants, 
-  progressBarVariants 
-} from "./components/ui/progress"
-
-export { 
-  Spinner, 
-  LoadingOverlay, 
-  PulseLoader, 
-  PageLoader, 
-  LoadingButton,
-  spinnerVariants 
-} from "./components/ui/spinner"
-
-export { 
-  Skeleton, 
-  SkeletonAvatar, 
-  SkeletonButton, 
-  SkeletonText, 
-  SkeletonCard,
-  SkeletonTable,
-  SkeletonList,
-  skeletonVariants 
-} from "./components/ui/skeleton"
-
-// User Interface
-export { Avatar, AvatarImage, AvatarFallback, avatarVariants } from "./components/ui/avatar"
-
-// Branding
-export { AdaLogo, logoVariants, type AdaLogoProps } from "./components/ui/ada-logo"
+// Notifications (Toast system components)
+export { Toast, ToastAction, ToastClose, ToastDescription, ToastProvider, ToastTitle, ToastViewport } from './components/ui/toast'
 
 // Utilities
-export { cn } from "./lib/utils"
+export { cn } from './lib/utils'
 
-// Types for common patterns
-export type { VariantProps } from "class-variance-authority"
+// Types
+export type { VariantProps } from 'class-variance-authority'
