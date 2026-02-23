@@ -1,7 +1,7 @@
 {
   "name": "ada-design-system",
-  "version": "2.0.0",
-  "description": "Culinary Minimalism - shadcn/ui based design system for AdaSystems platform",
+  "version": "3.0.0",
+  "description": "Professional typography without gradients - Clean shadcn/ui design system with French/Dutch/English support",
   "main": "index.ts",
   "types": "index.ts",
   "scripts": {

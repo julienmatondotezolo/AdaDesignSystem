@@ -1,110 +1,130 @@
-# 🎨 Ada Design System v2.0
+# 🎨 Ada Design System v3.0
 
-**Modern Hospitality UI** - Vibrant, contemporary shadcn/ui design system with premium aesthetics for AdaSystems platform.
+**Professional Typography Without Gradients™** - Clean shadcn/ui design system with multilingual support for AdaSystems platform.
 
-![Ada Design System](https://img.shields.io/badge/Design%20System-v2.0.0-blue)
+![Ada Design System](https://img.shields.io/badge/Design%20System-v3.0.0-blue)
 ![shadcn/ui](https://img.shields.io/badge/Built%20with-shadcn%2Fui-black)
-![Modern](https://img.shields.io/badge/Style-Modern-brightgreen)
+![Clean](https://img.shields.io/badge/Style-Clean-brightgreen)
+![Multilingual](https://img.shields.io/badge/Languages-EN%2FFR%2FNL-orange)
 ![Status](https://img.shields.io/badge/Status-Production-green)
 
-## 🎯 Brand Philosophy
+## 🎯 Design Philosophy
 
-**"Modern, Vibrant, Professional"**
+**"Professional Typography Without Gradients™"**
 
-A complete transformation from minimalism to modern vibrancy. Built on shadcn/ui with contemporary colors, premium typography, and sophisticated interactions. Perfect for next-generation hospitality software.
-
----
-
-## ✨ What's New in v2.0?
-
-- 🎨 **Modern Color Palette** - Vibrant blues, purples, cyans, and pinks
-- 🔤 **Premium Typography** - Inter & Plus Jakarta Sans for contemporary feel
-- 🚀 **Enhanced Components** - Buttons with hover animations and shadows
-- 📱 **New Components** - Toast, Dialog, Progress, Avatar
-- 🌈 **More Variants** - Extended color and size options
-- ⚡ **Improved UX** - Smooth transitions and micro-interactions
+Inspired by professional typography like Visuelt Pro, this design system emphasizes clean, readable interfaces without gradient effects. Built on shadcn/ui with clear hierarchy, consistent spacing, and international language support.
 
 ---
 
-## 🎨 Modern Design Tokens
+## ✨ What's New in v3.0?
 
-### Vibrant Color System (HSL for Tailwind)
-- **Primary**: `hsl(221, 83%, 53%)` - Modern Blue
-- **Secondary**: `hsl(262, 83%, 58%)` - Modern Purple  
-- **Accent**: `hsl(199, 89%, 48%)` - Vibrant Cyan
-- **Success**: `hsl(142, 76%, 36%)` - Modern Green
-- **Warning**: `hsl(32, 95%, 44%)` - Modern Orange
-- **Destructive**: `hsl(346, 87%, 43%)` - Modern Red
-- **Pink**: `hsl(322, 100%, 65%)` - Vibrant Pink
+- 🚫 **No Gradients** - Clean, professional aesthetic without color gradients
+- 🌍 **Multilingual Support** - Built-in English, French, and Dutch translations
+- 🔤 **Typography Focus** - Emphasis on hierarchy, spacing, and readability
+- 🎛️ **Language Switcher** - Easy language switching component
+- 📝 **Clean Components** - Removed all gradient styling for professional look
+- 🏷️ **International** - Ready for Belgian/European market deployment
 
-### Premium Typography
+---
+
+## 🌍 Language Support
+
+### Built-in Translations
+- **English** (en) - Default language
+- **French** (fr) - Français - Full translation support
+- **Dutch** (nl) - Nederlands - Full translation support
+
+### LanguageSwitcher Component
+```tsx
+import { LanguageSwitcher, useLocale } from "@/components/ui/language-switcher"
+
+export default function App() {
+  const { locale, setLocale } = useLocale()
+  
+  return (
+    <LanguageSwitcher
+      currentLocale={locale}
+      onLocaleChange={setLocale}
+      variant="minimal"
+    />
+  )
+}
+```
+
+### Translation System
+```tsx
+import { t } from "@/lib/i18n"
+
+export default function Component() {
+  const { locale } = useLocale()
+  const translate = t(locale)
+  
+  return (
+    <button>{translate('common.save')}</button>
+  )
+}
+```
+
+---
+
+## 🎨 Clean Design Tokens
+
+### Professional Color System (No Gradients)
+- **Primary**: `hsl(221, 83%, 53%)` - Professional Blue
+- **Secondary**: `hsl(262, 83%, 58%)` - Professional Purple  
+- **Accent**: `hsl(199, 89%, 48%)` - Professional Cyan
+- **Success**: `hsl(142, 76%, 36%)` - Professional Green
+- **Warning**: `hsl(32, 95%, 44%)` - Professional Orange
+- **Destructive**: `hsl(346, 87%, 43%)` - Professional Red
+- **Muted**: Clean gray tones for subtlety
+
+### Professional Typography
 - **Primary**: Inter (Clean, modern, highly readable)
-- **Display**: Plus Jakarta Sans (Premium headings and accents)
-- **Features**: OpenType features enabled for optimal rendering
-- **Mono**: JetBrains Mono (Code/data)
+- **Display**: Plus Jakarta Sans (Professional headings)
+- **Features**: Optimized line-height and letter-spacing
+- **Hierarchy**: Clear weight system (400, 500, 600, 700)
 
-### Spacing Scale
+### Typography Scale (Visuelt Pro Inspired)
+- **Heading 1 / Bold**: 48px, 110% line-height, -1% spacing
+- **Headline 2 / Medium**: 24px, 110% line-height, 0% spacing  
+- **Body / Regular**: 16px, 150% line-height, 0% spacing
+- **Caption / Small**: 14px, 140% line-height, 0% spacing
+
+### Clean Spacing
+- **2px** - Micro spacing
 - **4px** - Tight spacing
 - **8px** - Small spacing  
 - **12px** - Medium spacing
 - **16px** - Base spacing
 - **24px** - Large spacing
 - **32px** - XL spacing
-- **48px** - XXL spacing
-
-### Border Radius
-- **4px** - Small (inputs, badges)
-- **8px** - Medium (buttons)
-- **12px** - Large (cards)
-- **16px** - XL (modals)
-- **24px** - Pill (switches, tags)
 
 ---
 
-## 🧩 Components Available
+## 🧩 Core Components
 
-### Core Components (Modern Design)
-- ✅ **AdaLogo** - Brand logo with multiple size/color variants
-- ✅ **Button** - 8 variants, 7 sizes, with hover animations & shadows
-- ✅ **Card** - Glass-morphism inspired cards with backdrop blur
-- ✅ **Input** - Modern inputs with enhanced focus states
-- ✅ **Label** - Accessible form labels with premium typography
-- ✅ **Badge** - 12 colorful variants for status indicators
-- ✅ **Switch** - Smooth toggle controls with transitions
-- ✅ **Select** - Modern dropdowns with enhanced styling
-- ✅ **Table** - Clean data tables with modern spacing
+### Essential UI Elements
+- ✅ **AdaLogo** - Clean brand logo without gradients
+- ✅ **Button** - Professional buttons (no gradient variants)
+- ✅ **Card** - Clean cards with subtle borders
+- ✅ **Input** - Professional form inputs
+- ✅ **Label** - Accessible form labels
+- ✅ **Badge** - Clean status indicators
+- ✅ **Switch** - Professional toggle controls
+- ✅ **Select** - Clean dropdown menus
+- ✅ **Table** - Professional data tables
 
-### Feedback & Overlays
-- ✅ **Toast** - Modern notification system with variants
-- ✅ **Dialog** - Modal dialogs with backdrop blur and animations
+### Language & Accessibility
+- ✅ **LanguageSwitcher** - Elegant language selection
+- ✅ **Multilingual Labels** - Translated form labels
+- ✅ **International Formatting** - Date/currency per locale
 
-### Loading States & Progress
-- ✅ **Progress** - Multi-variant progress bars with animations
-- ✅ **LoadingProgress** - Indeterminate loading bars
-- ✅ **CircularProgress** - Circular progress indicators with percentages
-- ✅ **StepProgress** - Multi-step process indicators
-- ✅ **Spinner** - Loading spinners in 5 sizes, 8 color variants
-- ✅ **PulseLoader** - Dots and bars pulse animations
-- ✅ **LoadingOverlay** - Overlay loading states with backdrop blur
-- ✅ **Skeleton** - Content placeholders while loading
-- ✅ **SkeletonCard/Table/List** - Complex skeleton layouts
-
-### User Interface
-- ✅ **Avatar** - 5 sizes for user profiles and team displays
-
-### Enhanced Features
-- 🎨 **Vibrant Color Palette** - 7 semantic color variants
-- 🔄 **Smooth Animations** - Micro-interactions and transitions
-- 📱 **Glass Morphism** - Modern backdrop blur effects
-- 🎯 **Active States** - Button scale animations on click
-- 🌈 **Gradient Support** - Beautiful gradient text and backgrounds
-
-### Coming Soon
-- 🔄 **Dropdown Menu** - Context menus with modern styling
-- 🔄 **Tabs** - Navigation tabs with indicator animations
-- 🔄 **Accordion** - Collapsible content with smooth transitions
-- 🔄 **Command** - Command palette with search
-- 🔄 **Calendar** - Date picker with modern design
+### Professional Features
+- 🎯 **No Gradient Policy** - Clean, professional aesthetic only
+- 📝 **Typography First** - Content hierarchy and readability focus
+- 🌍 **International Ready** - French/Dutch translations included
+- ♿ **Accessibility** - ARIA labels, keyboard navigation
+- 🎨 **Consistent Colors** - Solid colors, no gradient variations
 
 ---
 
@@ -129,28 +149,24 @@ module.exports = {
     './components/**/*.{ts,tsx}',
     './app/**/*.{ts,tsx}',
     './src/**/*.{ts,tsx}',
-    './node_modules/ada-design-system/**/*.{ts,tsx}', // If installed as package
   ],
   theme: {
     extend: {
       colors: {
-        border: "hsl(var(--border))",
-        input: "hsl(var(--input))",
-        ring: "hsl(var(--ring))",
-        background: "hsl(var(--background))",
-        foreground: "hsl(var(--foreground))",
+        // Clean ADA Color System (No Gradients)
         primary: {
-          DEFAULT: "hsl(var(--primary))", // ADA Blue
-          foreground: "hsl(var(--primary-foreground))",
+          DEFAULT: "hsl(221, 83%, 53%)",
+          foreground: "hsl(210, 40%, 98%)",
         },
         secondary: {
-          DEFAULT: "hsl(var(--secondary))", // ADA Light Blue
-          foreground: "hsl(var(--secondary-foreground))",
+          DEFAULT: "hsl(262, 83%, 58%)",
+          foreground: "hsl(210, 40%, 98%)",
         },
-        // ... rest of color system
+        // ... rest of clean color tokens
       },
       fontFamily: {
-        sans: ["Space Grotesk", "Geist Sans", "system-ui"],
+        sans: ["Inter", "Plus Jakarta Sans", "system-ui"],
+        display: ["Plus Jakarta Sans", "Inter", "system-ui"],
       },
     },
   },
@@ -158,113 +174,122 @@ module.exports = {
 }
 ```
 
-### 3. Add CSS Variables
+### 3. Add Clean CSS Variables
 
 Add to your `globals.css`:
 
 ```css
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   :root {
+    /* Clean ADA Design System - No Gradients */
     --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-    --primary: 232 100% 66%; /* ADA Blue */
-    --secondary: 201 85% 60%; /* ADA Light Blue */
-    /* ... rest of design tokens */
+    --foreground: 224 71% 4%;
+    --primary: 221 83% 53%; /* Professional Blue */
+    --secondary: 262 83% 58%; /* Professional Purple */
+    /* ... rest of clean design tokens */
   }
 }
 ```
 
 ### 4. Copy Components
 
-Copy the components you need from this design system:
+Copy the components you need:
 
 ```bash
-# Example: Copy button component
+# Copy core components
 cp -r AdaDesignSystem/components/ui/button.tsx your-app/components/ui/
-cp -r AdaDesignSystem/lib/utils.ts your-app/lib/
+cp -r AdaDesignSystem/components/ui/language-switcher.tsx your-app/components/ui/
+cp -r AdaDesignSystem/lib/i18n.ts your-app/lib/
 ```
 
-### 5. Use in Your App
+### 5. Use with Language Support
 
 ```tsx
 import { Button } from "@/components/ui/button"
 import { AdaLogo } from "@/components/ui/ada-logo"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { LanguageSwitcher, useLocale } from "@/components/ui/language-switcher"
+import { t } from "@/lib/i18n"
 
-export default function HomePage() {
+export default function RestaurantDashboard() {
+  const { locale, setLocale } = useLocale()
+  const translate = t(locale)
+  
   return (
     <div className="p-8">
-      <AdaLogo size="lg" variant="primary" />
+      <div className="flex items-center gap-4 mb-8">
+        <AdaLogo size="md" variant="primary" />
+        <LanguageSwitcher 
+          currentLocale={locale}
+          onLocaleChange={setLocale}
+          variant="minimal"
+        />
+      </div>
       
-      <Card className="mt-8">
-        <CardHeader>
-          <CardTitle>Welcome to ADA Systems</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <p>Premium hospitality software with beautiful design.</p>
-          <Button className="mt-4">Get Started</Button>
-        </CardContent>
-      </Card>
+      <h1 className="text-3xl font-bold mb-4">
+        {locale === 'fr' ? 'Tableau de bord' : 
+         locale === 'nl' ? 'Dashboard' : 
+         'Dashboard'}
+      </h1>
+      
+      <Button variant="default">
+        {translate('common.save')}
+      </Button>
     </div>
   )
 }
 ```
 
-### 6. Loading States Examples
+### 6. Professional Typography Examples
 
 ```tsx
-import { 
-  Progress, 
-  LoadingProgress, 
-  CircularProgress,
-  Spinner,
-  LoadingOverlay,
-  Skeleton,
-  SkeletonCard,
-  SkeletonList
-} from "@/components/ui"
-
-export default function RestaurantDashboard() {
-  const [loading, setLoading] = useState(false)
-  
+// Clean typography following Visuelt Pro principles
+export default function TypographyShowcase() {
   return (
-    <div className="p-8 space-y-6">
-      {/* Progress Bars */}
-      <Progress value={75} variant="success" showValue />
-      <LoadingProgress variant="primary" />
-      
-      {/* Circular Progress */}
-      <CircularProgress value={85} variant="accent" showValue />
-      
-      {/* Spinners */}
-      <div className="flex gap-3">
-        <Spinner size="sm" variant="primary" />
-        <Spinner size="lg" variant="success" />
+    <div className="space-y-8">
+      {/* Heading 1 / Bold */}
+      <div className="space-y-2">
+        <div className="text-sm text-muted-foreground uppercase tracking-wide">
+          Heading 1 / Bold
+        </div>
+        <h1 className="text-4xl font-bold leading-tight tracking-tight">
+          Professional Typography
+        </h1>
+        <div className="text-sm text-muted-foreground">
+          48px / 110% line height / -1% spacing / Bold
+        </div>
       </div>
-      
-      {/* Loading Overlay */}
-      <LoadingOverlay loading={loading} text="Processing order...">
-        <Card>
-          <CardContent className="p-6">
-            <p>Order details will appear here</p>
-          </CardContent>
-        </Card>
-      </LoadingOverlay>
-      
-      {/* Skeleton Loaders */}
-      <SkeletonCard />
-      <SkeletonList items={3} withAvatar />
-      
-      {/* Loading Button */}
-      <Button disabled={loading}>
-        {loading && <Spinner size="sm" variant="white" className="mr-2" />}
-        {loading ? 'Processing...' : 'Submit Order'}
-      </Button>
+
+      {/* Headline 2 / Medium */}
+      <div className="space-y-2">
+        <div className="text-sm text-muted-foreground uppercase tracking-wide">
+          Headline 2 / Medium
+        </div>
+        <h2 className="text-2xl font-medium leading-tight">
+          Clean Interface Design
+        </h2>
+        <div className="text-sm text-muted-foreground">
+          24px / 110% line height / 0% spacing / Medium
+        </div>
+      </div>
+
+      {/* Body / Regular */}
+      <div className="space-y-2">
+        <div className="text-sm text-muted-foreground uppercase tracking-wide">
+          Body / Regular
+        </div>
+        <p className="text-base leading-relaxed">
+          Built with shadcn/ui, React, and TypeScript for professional applications.
+        </p>
+        <div className="text-sm text-muted-foreground">
+          16px / 150% line height / 0% spacing / Regular
+        </div>
+      </div>
     </div>
   )
 }
@@ -274,33 +299,40 @@ export default function RestaurantDashboard() {
 
 ## 🎯 Perfect for ADA Apps
 
-This design system is specifically architected for:
+### Multilingual Restaurant Software
+- **AdaMenu** - Menu management (FR: Gestion des menus, NL: Menumanagement)
+- **AdaStock** - Inventory tracking (FR: Suivi des stocks, NL: Voorraadbeheer)
+- **AdaStaff** - Employee scheduling (FR: Planification du personnel, NL: Personeelsplanning)
+- **AdaAuth** - Authentication services (FR: Services d'authentification, NL: Authenticatiediensten)
 
-- **AdaMenu** - Restaurant menu management
-- **AdaStock** - Inventory tracking  
-- **AdaStaff** - Employee scheduling
-- **AdaAuth** - Authentication services
-- **AdaKDS** - Kitchen display systems
-- **AdaPhone** - AI receptionist interfaces
-
-All apps share the same component library for consistency!
-- **Desktop**: 1024px+
-- **Large**: 1280px+
+### International Deployment Ready
+- **Belgium** - French/Dutch bilingual support
+- **France** - Full French localization
+- **Netherlands** - Complete Dutch translation
+- **EU Markets** - Professional, clean aesthetic
 
 ---
 
-## 🎯 Use Cases
+## 🚫 Design Principles
 
-Perfect for:
-- Restaurant management applications
-- POS systems and interfaces
-- Hospitality software
-- Kitchen display systems
-- Staff management tools
-- Inventory applications
+### What We Removed (v3.0)
+- ❌ All gradient backgrounds and text effects
+- ❌ Vibrant/flashy color variants
+- ❌ Complex shadow effects
+- ❌ Overly decorative elements
+
+### What We Emphasize
+- ✅ Clear typography hierarchy
+- ✅ Professional color usage
+- ✅ Consistent spacing rhythm
+- ✅ International accessibility
+- ✅ Clean component borders
+- ✅ Readable font weights
 
 ---
 
 ## 📄 License
 
-MIT License - Built for AdaSystems Platform
+MIT License - Built for Professional AdaSystems Platform
+
+**Professional Typography Without Gradients™** - Clean design for serious business applications.

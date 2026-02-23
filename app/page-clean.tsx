@@ -14,7 +14,7 @@ import { LanguageSwitcher, useLocale } from '../components/ui/language-switcher'
 import { t, type Locale } from '../lib/i18n';
 import { Plus, Settings, User } from 'lucide-react';
 
-export default function HomePage() {
+export default function CleanShowcase() {
   const { locale, setLocale } = useLocale()
   const translate = t(locale)
 
@@ -103,7 +103,7 @@ export default function HomePage() {
   }
 
   const t = content[locale]
-  
+
   return (
     <div className="min-h-screen bg-background">
       <div className="container mx-auto py-12 px-6">
