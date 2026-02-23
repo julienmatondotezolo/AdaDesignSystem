@@ -1,0 +1,73 @@
+name: Publish to NPM
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'package.json'
+      - 'components/**'
+      - 'lib/**'
+      - 'index.ts'
+      - 'app/globals.css'
+      - 'tailwind.config.js'
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        registry-url: 'https://registry.npmjs.org'
+        
+    - name: Install dependencies
+      run: npm ci
+      
+    - name: Build package
+      run: npm run build-package
+      
+    - name: Check if version changed
+      id: version-check
+      run: |
+        CURRENT_VERSION=$(npm view ada-design-system version 2>/dev/null || echo "0.0.0")
+        LOCAL_VERSION=$(node -p "require('./package.json').version")
+        echo "current-version=$CURRENT_VERSION" >> $GITHUB_OUTPUT
+        echo "local-version=$LOCAL_VERSION" >> $GITHUB_OUTPUT
+        if [ "$CURRENT_VERSION" != "$LOCAL_VERSION" ]; then
+          echo "version-changed=true" >> $GITHUB_OUTPUT
+          echo "🚀 Version changed: $CURRENT_VERSION → $LOCAL_VERSION"
+        else
+          echo "version-changed=false" >> $GITHUB_OUTPUT
+          echo "⚠️ Version unchanged: $LOCAL_VERSION (skipping publish)"
+        fi
+        
+    - name: Publish to NPM
+      if: steps.version-check.outputs.version-changed == 'true'
+      run: npm publish
+      env:
+        NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        
+    - name: Create GitHub Release
+      if: steps.version-check.outputs.version-changed == 'true'
+      uses: actions/create-release@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        tag_name: v${{ steps.version-check.outputs.local-version }}
+        release_name: ada-design-system v${{ steps.version-check.outputs.local-version }}
+        body: |
+          ## Changes
+          - Updated ada-design-system to version ${{ steps.version-check.outputs.local-version }}
+          - Published to npm registry
+          
+          Install with:
+          ```bash
+          npm install ada-design-system@${{ steps.version-check.outputs.local-version }}
+          ```
+        draft: false
+        prerelease: false
