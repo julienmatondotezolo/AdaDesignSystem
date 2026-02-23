@@ -77,7 +77,17 @@ A complete transformation from minimalism to modern vibrancy. Built on shadcn/ui
 ### Feedback & Overlays
 - ✅ **Toast** - Modern notification system with variants
 - ✅ **Dialog** - Modal dialogs with backdrop blur and animations
-- ✅ **Progress** - Multi-variant progress bars for loading states
+
+### Loading States & Progress
+- ✅ **Progress** - Multi-variant progress bars with animations
+- ✅ **LoadingProgress** - Indeterminate loading bars
+- ✅ **CircularProgress** - Circular progress indicators with percentages
+- ✅ **StepProgress** - Multi-step process indicators
+- ✅ **Spinner** - Loading spinners in 5 sizes, 8 color variants
+- ✅ **PulseLoader** - Dots and bars pulse animations
+- ✅ **LoadingOverlay** - Overlay loading states with backdrop blur
+- ✅ **Skeleton** - Content placeholders while loading
+- ✅ **SkeletonCard/Table/List** - Complex skeleton layouts
 
 ### User Interface
 - ✅ **Avatar** - 5 sizes for user profiles and team displays
@@ -200,6 +210,61 @@ export default function HomePage() {
           <Button className="mt-4">Get Started</Button>
         </CardContent>
       </Card>
+    </div>
+  )
+}
+```
+
+### 6. Loading States Examples
+
+```tsx
+import { 
+  Progress, 
+  LoadingProgress, 
+  CircularProgress,
+  Spinner,
+  LoadingOverlay,
+  Skeleton,
+  SkeletonCard,
+  SkeletonList
+} from "@/components/ui"
+
+export default function RestaurantDashboard() {
+  const [loading, setLoading] = useState(false)
+  
+  return (
+    <div className="p-8 space-y-6">
+      {/* Progress Bars */}
+      <Progress value={75} variant="success" showValue />
+      <LoadingProgress variant="primary" />
+      
+      {/* Circular Progress */}
+      <CircularProgress value={85} variant="accent" showValue />
+      
+      {/* Spinners */}
+      <div className="flex gap-3">
+        <Spinner size="sm" variant="primary" />
+        <Spinner size="lg" variant="success" />
+      </div>
+      
+      {/* Loading Overlay */}
+      <LoadingOverlay loading={loading} text="Processing order...">
+        <Card>
+          <CardContent className="p-6">
+            <p>Order details will appear here</p>
+          </CardContent>
+        </Card>
+      </LoadingOverlay>
+      
+      {/* Skeleton Loaders */}
+      <SkeletonCard />
+      <SkeletonList items={3} withAvatar />
+      
+      {/* Loading Button */}
+      <Button disabled={loading}>
+        {loading && <Spinner size="sm" variant="white" className="mr-2" />}
+        {loading ? 'Processing...' : 'Submit Order'}
+      </Button>
     </div>
   )
 }

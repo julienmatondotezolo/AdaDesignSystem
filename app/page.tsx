@@ -11,12 +11,16 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '.
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '../components/ui/table';
 import { AdaLogo } from '../components/ui/ada-logo';
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from '../components/ui/dialog';
-import { Progress } from '../components/ui/progress';
+import { Progress, LoadingProgress, CircularProgress, StepProgress } from '../components/ui/progress';
 import { Avatar, AvatarFallback, AvatarImage } from '../components/ui/avatar';
-import { Plus, Bell, User, Settings, Calendar, Star } from 'lucide-react';
+import { Skeleton, SkeletonAvatar, SkeletonButton, SkeletonText, SkeletonCard, SkeletonTable, SkeletonList } from '../components/ui/skeleton';
+import { Spinner, LoadingOverlay, PulseLoader, PageLoader, LoadingButton } from '../components/ui/spinner';
+import { Plus, Bell, User, Settings, Calendar, Star, Download, RefreshCw } from 'lucide-react';
 
 export default function HomePage() {
   const [progress, setProgress] = useState(60)
+  const [loading, setLoading] = useState(false)
+  const [buttonLoading, setButtonLoading] = useState(false)
   
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 p-8">
@@ -284,6 +288,247 @@ export default function HomePage() {
               </CardContent>
             </Card>
           </div>
+        </section>
+
+        {/* Loading States */}
+        <section className="mb-20">
+          <h2 className="text-3xl font-bold mb-10 text-center">Loading States & Skeletons</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            
+            {/* Spinners */}
+            <Card className="shadow-lg border-0 bg-white/70 backdrop-blur-sm">
+              <CardHeader>
+                <CardTitle className="text-lg">Spinners</CardTitle>
+                <CardDescription>
+                  Loading indicators in different sizes and colors
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-6">
+                <div className="space-y-3">
+                  <p className="text-sm font-medium text-muted-foreground">Sizes</p>
+                  <div className="flex items-center gap-4">
+                    <Spinner size="xs" />
+                    <Spinner size="sm" />
+                    <Spinner size="default" />
+                    <Spinner size="lg" />
+                    <Spinner size="xl" />
+                  </div>
+                </div>
+                <div className="space-y-3">
+                  <p className="text-sm font-medium text-muted-foreground">Colors</p>
+                  <div className="flex items-center gap-3">
+                    <Spinner variant="primary" />
+                    <Spinner variant="secondary" />
+                    <Spinner variant="accent" />
+                    <Spinner variant="success" />
+                    <Spinner variant="warning" />
+                    <Spinner variant="destructive" />
+                  </div>
+                </div>
+                <div className="space-y-3">
+                  <p className="text-sm font-medium text-muted-foreground">Pulse Loaders</p>
+                  <div className="space-y-3">
+                    <PulseLoader variant="dots" />
+                    <PulseLoader variant="bars" />
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Progress Bars */}
+            <Card className="shadow-lg border-0 bg-white/70 backdrop-blur-sm">
+              <CardHeader>
+                <CardTitle className="text-lg">Progress Bars</CardTitle>
+                <CardDescription>
+                  Enhanced progress indicators with animations
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-6">
+                <div className="space-y-3">
+                  <p className="text-sm font-medium text-muted-foreground">Sizes & Colors</p>
+                  <div className="space-y-3">
+                    <Progress value={75} size="xs" variant="success" />
+                    <Progress value={60} size="sm" variant="default" />
+                    <Progress value={45} size="default" variant="warning" />
+                    <Progress value={90} size="lg" variant="destructive" />
+                  </div>
+                </div>
+                <div className="space-y-3">
+                  <p className="text-sm font-medium text-muted-foreground">With Values</p>
+                  <Progress value={85} variant="accent" showValue />
+                </div>
+                <div className="space-y-3">
+                  <p className="text-sm font-medium text-muted-foreground">Indeterminate Loading</p>
+                  <LoadingProgress variant="default" />
+                </div>
+                <div className="space-y-3">
+                  <p className="text-sm font-medium text-muted-foreground">Circular Progress</p>
+                  <div className="flex gap-3">
+                    <CircularProgress value={25} size={50} variant="success" showValue />
+                    <CircularProgress value={65} size={50} variant="warning" showValue />
+                    <CircularProgress value={90} size={50} variant="destructive" showValue />
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Button Loading States */}
+            <Card className="shadow-lg border-0 bg-white/70 backdrop-blur-sm">
+              <CardHeader>
+                <CardTitle className="text-lg">Loading Buttons</CardTitle>
+                <CardDescription>
+                  Buttons with loading states and overlays
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-6">
+                <div className="space-y-3">
+                  <p className="text-sm font-medium text-muted-foreground">Button States</p>
+                  <div className="space-y-3">
+                    <Button 
+                      className="w-full" 
+                      onClick={() => {
+                        setButtonLoading(true)
+                        setTimeout(() => setButtonLoading(false), 2000)
+                      }}
+                      disabled={buttonLoading}
+                    >
+                      {buttonLoading && <Spinner size="sm" variant="white" className="mr-2" />}
+                      {buttonLoading ? 'Processing...' : 'Process Order'}
+                    </Button>
+                    <Button variant="secondary" className="w-full" disabled>
+                      <Spinner size="sm" className="mr-2" />
+                      Loading Data...
+                    </Button>
+                    <Button variant="outline" className="w-full">
+                      <RefreshCw className="mr-2 h-4 w-4" />
+                      Refresh
+                    </Button>
+                  </div>
+                </div>
+                <div className="space-y-3">
+                  <p className="text-sm font-medium text-muted-foreground">Loading Overlay</p>
+                  <LoadingOverlay loading={loading} text="Loading content...">
+                    <div className="p-4 border rounded-lg">
+                      <p>Some content here that can be overlaid with loading state.</p>
+                      <Button 
+                        size="sm" 
+                        className="mt-2"
+                        onClick={() => {
+                          setLoading(true)
+                          setTimeout(() => setLoading(false), 2000)
+                        }}
+                      >
+                        Trigger Loading
+                      </Button>
+                    </div>
+                  </LoadingOverlay>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </section>
+
+        {/* Skeleton Loaders */}
+        <section className="mb-20">
+          <h2 className="text-3xl font-bold mb-10 text-center">Skeleton Loaders</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            
+            <Card className="shadow-lg border-0 bg-white/70 backdrop-blur-sm">
+              <CardHeader>
+                <CardTitle className="text-lg">Basic Skeletons</CardTitle>
+                <CardDescription>
+                  Content placeholders while loading
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-6">
+                <div className="space-y-3">
+                  <p className="text-sm font-medium text-muted-foreground">Avatars</p>
+                  <div className="flex gap-3">
+                    <SkeletonAvatar size="sm" />
+                    <SkeletonAvatar size="default" />
+                    <SkeletonAvatar size="lg" />
+                    <SkeletonAvatar size="xl" />
+                  </div>
+                </div>
+                <div className="space-y-3">
+                  <p className="text-sm font-medium text-muted-foreground">Text Lines</p>
+                  <SkeletonText lines={1} />
+                  <SkeletonText lines={3} />
+                </div>
+                <div className="space-y-3">
+                  <p className="text-sm font-medium text-muted-foreground">Buttons</p>
+                  <div className="flex gap-2">
+                    <SkeletonButton />
+                    <SkeletonButton className="w-24" />
+                    <SkeletonButton className="w-16" />
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="shadow-lg border-0 bg-white/70 backdrop-blur-sm">
+              <CardHeader>
+                <CardTitle className="text-lg">Complex Skeletons</CardTitle>
+                <CardDescription>
+                  Full component placeholders
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-6">
+                <div className="space-y-3">
+                  <p className="text-sm font-medium text-muted-foreground">List Items</p>
+                  <SkeletonList items={3} withAvatar />
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+          
+          {/* Full Width Skeleton Examples */}
+          <div className="mt-8 space-y-8">
+            <Card className="shadow-lg border-0 bg-white/70 backdrop-blur-sm">
+              <CardHeader>
+                <CardTitle className="text-lg">Card Skeleton</CardTitle>
+                <CardDescription>Loading placeholder for complete cards</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <SkeletonCard />
+              </CardContent>
+            </Card>
+            
+            <Card className="shadow-lg border-0 bg-white/70 backdrop-blur-sm">
+              <CardHeader>
+                <CardTitle className="text-lg">Table Skeleton</CardTitle>
+                <CardDescription>Loading placeholder for data tables</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <SkeletonTable rows={4} columns={4} />
+              </CardContent>
+            </Card>
+          </div>
+        </section>
+
+        {/* Step Progress */}
+        <section className="mb-20">
+          <h2 className="text-3xl font-bold mb-10 text-center">Step Progress</h2>
+          <Card className="shadow-lg border-0 bg-white/70 backdrop-blur-sm max-w-2xl mx-auto">
+            <CardHeader>
+              <CardTitle className="text-lg">Order Processing</CardTitle>
+              <CardDescription>
+                Multi-step process indicator
+              </CardDescription>
+            </CardHeader>
+            <CardContent className="space-y-6">
+              <StepProgress 
+                steps={["Order Placed", "Preparing", "Cooking", "Ready"]}
+                currentStep={1}
+                variant="success"
+              />
+              <StepProgress 
+                steps={["Payment", "Confirmation", "Processing", "Delivery"]}
+                currentStep={2}
+                variant="default"
+              />
+            </CardContent>
+          </Card>
         </section>
 
         {/* Dialogs & Popups */}

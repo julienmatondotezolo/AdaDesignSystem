@@ -68,8 +68,35 @@ export {
   DialogDescription,
 } from "./components/ui/dialog"
 
-// Progress & Status
-export { Progress, progressVariants, progressBarVariants } from "./components/ui/progress"
+// Progress & Loading States
+export { 
+  Progress, 
+  LoadingProgress,
+  CircularProgress,
+  StepProgress,
+  progressVariants, 
+  progressBarVariants 
+} from "./components/ui/progress"
+
+export { 
+  Spinner, 
+  LoadingOverlay, 
+  PulseLoader, 
+  PageLoader, 
+  LoadingButton,
+  spinnerVariants 
+} from "./components/ui/spinner"
+
+export { 
+  Skeleton, 
+  SkeletonAvatar, 
+  SkeletonButton, 
+  SkeletonText, 
+  SkeletonCard,
+  SkeletonTable,
+  SkeletonList,
+  skeletonVariants 
+} from "./components/ui/skeleton"
 
 // User Interface
 export { Avatar, AvatarImage, AvatarFallback, avatarVariants } from "./components/ui/avatar"
