@@ -37,7 +37,7 @@ exports.logoVariants = exports.AdaLogo = void 0;
 const jsx_runtime_1 = require("react/jsx-runtime");
 const React = __importStar(require("react"));
 const class_variance_authority_1 = require("class-variance-authority");
-const utils_1 = require("@/lib/utils");
+const utils_1 = require("../../lib/utils");
 const logoVariants = (0, class_variance_authority_1.cva)("inline-block", {
     variants: {
         size: {

@@ -37,7 +37,7 @@ exports.LanguageSwitcher = LanguageSwitcher;
 exports.useLocale = useLocale;
 const jsx_runtime_1 = require("react/jsx-runtime");
 const React = __importStar(require("react"));
-const utils_1 = require("@/lib/utils");
+const utils_1 = require("../../lib/utils");
 // Import flag icons from country-flag-icons package
 const _3x2_1 = require("country-flag-icons/react/3x2");
 const _3x2_2 = require("country-flag-icons/react/3x2");

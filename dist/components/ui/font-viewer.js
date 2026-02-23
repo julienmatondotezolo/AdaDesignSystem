@@ -4,7 +4,7 @@ exports.FontViewer = FontViewer;
 exports.FontViewerShowcase = FontViewerShowcase;
 exports.FontSpecimen = FontSpecimen;
 const jsx_runtime_1 = require("react/jsx-runtime");
-const utils_1 = require("@/lib/utils");
+const utils_1 = require("../../lib/utils");
 const card_1 = require("./card");
 const badge_1 = require("./badge");
 function FontSpecimen({ weight, size, lineHeight, spacing, className, children }) {

@@ -10,7 +10,7 @@ exports.SkeletonTable = SkeletonTable;
 exports.SkeletonList = SkeletonList;
 const jsx_runtime_1 = require("react/jsx-runtime");
 const class_variance_authority_1 = require("class-variance-authority");
-const utils_1 = require("@/lib/utils");
+const utils_1 = require("../../lib/utils");
 const skeletonVariants = (0, class_variance_authority_1.cva)("animate-pulse rounded-md bg-muted", {
     variants: {
         variant: {

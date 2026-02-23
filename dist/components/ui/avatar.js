@@ -38,7 +38,7 @@ const jsx_runtime_1 = require("react/jsx-runtime");
 const React = __importStar(require("react"));
 const AvatarPrimitive = __importStar(require("@radix-ui/react-avatar"));
 const class_variance_authority_1 = require("class-variance-authority");
-const utils_1 = require("@/lib/utils");
+const utils_1 = require("../../lib/utils");
 const avatarVariants = (0, class_variance_authority_1.cva)("relative flex shrink-0 overflow-hidden rounded-full", {
     variants: {
         size: {

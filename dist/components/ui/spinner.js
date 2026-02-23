@@ -42,7 +42,7 @@ const jsx_runtime_1 = require("react/jsx-runtime");
 const React = __importStar(require("react"));
 const class_variance_authority_1 = require("class-variance-authority");
 const lucide_react_1 = require("lucide-react");
-const utils_1 = require("@/lib/utils");
+const utils_1 = require("../../lib/utils");
 const spinnerVariants = (0, class_variance_authority_1.cva)("animate-spin", {
     variants: {
         size: {

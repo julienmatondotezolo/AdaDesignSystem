@@ -41,7 +41,7 @@ const jsx_runtime_1 = require("react/jsx-runtime");
 const React = __importStar(require("react"));
 const ProgressPrimitive = __importStar(require("@radix-ui/react-progress"));
 const class_variance_authority_1 = require("class-variance-authority");
-const utils_1 = require("@/lib/utils");
+const utils_1 = require("../../lib/utils");
 const progressVariants = (0, class_variance_authority_1.cva)("w-full overflow-hidden rounded-full bg-secondary", {
     variants: {
         size: {

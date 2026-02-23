@@ -36,7 +36,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.TableCaption = exports.TableCell = exports.TableRow = exports.TableHead = exports.TableFooter = exports.TableBody = exports.TableHeader = exports.Table = void 0;
 const jsx_runtime_1 = require("react/jsx-runtime");
 const React = __importStar(require("react"));
-const utils_1 = require("@/lib/utils");
+const utils_1 = require("../../lib/utils");
 const Table = React.forwardRef(({ className, ...props }, ref) => ((0, jsx_runtime_1.jsx)("div", { className: "relative w-full overflow-auto", children: (0, jsx_runtime_1.jsx)("table", { ref: ref, className: (0, utils_1.cn)("w-full caption-bottom text-sm", className), ...props }) })));
 exports.Table = Table;
 Table.displayName = "Table";
