@@ -16,7 +16,6 @@ import { Plus, Settings, User } from 'lucide-react';
 
 export default function HomePage() {
   const { locale, setLocale } = useLocale()
-  const translate = t(locale)
 
   const content = {
     en: {
@@ -235,7 +234,7 @@ export default function HomePage() {
                 </div>
                 <Button className="w-full">
                   <Plus className="mr-2 h-4 w-4" />
-                  {translate('common.add')}
+                  Add Item
                 </Button>
               </CardContent>
             </Card>
@@ -279,7 +278,7 @@ export default function HomePage() {
               </CardHeader>
               <CardContent className="space-y-4">
                 <div className="flex items-center justify-between">
-                  <Label htmlFor="notifications">{translate('navigation.settings')}</Label>
+                  <Label htmlFor="notifications">Settings</Label>
                   <Switch id="notifications" />
                 </div>
                 <div className="flex items-center justify-between">

@@ -16,4 +16,4 @@ export { Progress, LoadingProgress, CircularProgress, StepProgress } from './pro
 export { Avatar, AvatarFallback, AvatarImage } from './avatar'
 export { Skeleton, SkeletonAvatar, SkeletonButton, SkeletonText, SkeletonCard, SkeletonTable, SkeletonList } from './skeleton'
 export { Spinner, LoadingOverlay, PulseLoader, PageLoader, LoadingButton } from './spinner'
-export { Toast, ToastAction, ToastClose, ToastDescription, ToastProvider, ToastTitle, ToastViewport, useToast, toast } from './toast'
+export { Toast, ToastAction, ToastClose, ToastDescription, ToastProvider, ToastTitle, ToastViewport } from './toast'
